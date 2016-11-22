@@ -17,5 +17,9 @@ public class FabricanteDao {
 	public List<Fabricante> buscaTodos() {
 		return this.entityManager.createQuery("from Fabricante", Fabricante.class).getResultList();
 	}
+	
+	public void salva(Fabricante fabricante){
+		this.entityManager.persist(fabricante);
+	}
 
 }
