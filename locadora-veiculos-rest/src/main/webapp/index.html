@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Locadora de Veículos</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/simple-sidebar.css" rel="stylesheet">
+</head>
+
+<body ng-app="App">
+	<div id="wrapper">
+
+		<div id="sidebar-wrapper">
+			<ul class="sidebar-nav">
+				<li class="sidebar-brand"><a href="#"> Start Bootstrap </a></li>
+				<li><a href="#">Fabricantes</a></li>
+				<li><a href="#">Modelo do Carro</a></li>
+				<li><a href="#">Carro</a></li>
+				<li><a href="#">Acessórios</a></li>
+				<li><a href="#">Motorista</a></li>
+				<li><a href="#">Funcionário</a></li>
+				<li><a href="#">Novo Aluguel</a></li>
+			</ul>
+		</div>
+
+		<div id="page-content-wrapper">
+			<a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Esconder Menu</a>
+			
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<div ng-view></div>
+					</div>
+				</div>				
+			</div>
+		</div>
+	</div>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+	<!-- Menu Toggle Script -->
+	<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-route/angular-route.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/controller.js"></script>
+	<script src="js/service.js"></script>
+	<script src="js/fabricante/fabricanteController.js"></script>
+	<script src="js/fabricante/fabricanteService.js"></script>
+</body>

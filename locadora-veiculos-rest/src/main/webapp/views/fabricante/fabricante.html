@@ -1,0 +1,25 @@
+<div class="row">	
+	<div class="col-sm-9">
+		<div class="main-content">
+			<div id="columnchart_material"></div>
+		</div>
+		<div class="main-content">
+			<h1>Fabricantes</h1>
+			
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>Código</th>
+						<th>Nome</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="fabricante in fabricantes">
+						<td>{{fabricante.codigo}}</td>
+						<td>{{fabricante.nome}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
