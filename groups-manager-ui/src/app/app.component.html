@@ -15,6 +15,27 @@
       <button pButton type="submit" label="Pesquisar"></button>
     </div>
 
+    <div class="ui-g">
+
+      <div class="ui-g-12">
+        <p-dataTable [value]="grupos" [paginator]="true" [rows]="5">
+          <p-column field="nome" header="Nome"></p-column>
+          <p-column field="igreja" header="Igreja" styleClass="col-data"></p-column>
+          <p-column styleClass="col-acoes">
+            <ng-template pTemplate="body">
+              <a pButton icon="fa-pencil"></a>
+              <button pButton icon="fa-trash"></button>
+            </ng-template>
+          </p-column>
+        </p-dataTable>
+      </div>
+
+    </div>
+
+    <div class="ui-g-12">
+        <a pButton label="Novo Grupo"></a>
+      </div>
+
   </div>
 
 </div>
