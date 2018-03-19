@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { CurrencyMaskModule } from "ng2-currency-mask";
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
@@ -25,6 +27,7 @@ import { GruposCadastroComponent } from './grupos-cadastro/grupos-cadastro.compo
   ],
   imports: [
     BrowserModule,
+    CurrencyMaskModule,
     BrowserAnimationsModule,
     CalendarModule,
     ButtonModule,
