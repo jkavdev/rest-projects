@@ -9,31 +9,26 @@
       </div>
 
       <div class="ui-g-12 ui-md-6 ui-fluid">
-        <label>Nome do Grupo {{nome.errors | json}}</label>
+        <label>Nome do Grupo</label>
         <input type="text" pInputText name="nome" ngModel #nome="ngModel" required minlength="5" />
-        <div *ngIf="nome.hasError('required') && nome.dirty" class="ui-message ui-messages-error">
-          Informe nome do Grupo
-        </div>
-        <div *ngIf="nome.hasError('minlength') && nome.dirty" class="ui-message ui-messages-error">
-          Mínimo de {{nome.errors.minlength.requiredLength}} caracteres
-        </div>
+        <app-message [control]="nome" error="required"
+          text="Informe nome do Grupo"></app-message>
+        <app-message [control]="nome" error="minlength"
+          text="Mínimo de {{nome.errors?.minlength?.requiredLength}} caracteres"></app-message>
       </div>
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Nome da Igreja</label>
         <input type="text" pInputText ngModel name="nomeIgreja" #nomeIgreja="ngModel" required minlength="10"/>
-        <div *ngIf="nomeIgreja.hasError('required') && nomeIgreja.dirty" class="ui-message ui-messages-error">
-          Informe nome do Igreja
-        </div>
-        <div *ngIf="nomeIgreja.hasError('minlength') && nomeIgreja.dirty" class="ui-message ui-messages-error">
-          Mínimo de {{nomeIgreja.errors.minlength.requiredLength}} caracteres
-        </div>
+        <app-message [control]="nomeIgreja" error="required"
+          text="Informe nome da Igreja"></app-message>
+        <app-message [control]="nomeIgreja" error="minlength"
+          text="Mínimo de {{nome.errors?.minlength?.requiredLength}} caracteres"></app-message>
       </div>
       <div class="ui-g-12 ui-fluid">
         <label>Objetivo do Grupo</label>
         <textarea pInputTextarea autoResize="false" ngModel name="objetivo" #objetivo="ngModel" required></textarea>
-        <div *ngIf="objetivo.hasError('required') && objetivo.dirty" class="ui-message ui-messages-error">
-          Informe objetivo do grupo
-        </div>
+        <app-message [control]="objetivo" error="required"
+          text="Informe objetivo do grupo"></app-message>
       </div>
 
       <div class="ui-g-12">

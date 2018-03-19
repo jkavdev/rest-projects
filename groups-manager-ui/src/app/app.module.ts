@@ -24,6 +24,7 @@ import { IntegrantePesquisaComponent } from './integrante-pesquisa/integrante-pe
 import { GruposCadastroComponent } from './grupos-cadastro/grupos-cadastro.component';
 import { EventoCadastroComponent } from './evento-cadastro/evento-cadastro.component';
 import { NoticiaCadastroComponent } from './noticia-cadastro/noticia-cadastro.component';
+import { MessageComponent } from './message/message.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { NoticiaCadastroComponent } from './noticia-cadastro/noticia-cadastro.co
     IntegrantePesquisaComponent,
     GruposCadastroComponent,
     EventoCadastroComponent,
-    NoticiaCadastroComponent
+    NoticiaCadastroComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
