@@ -15,6 +15,7 @@ import { SpinnerModule } from 'primeng/spinner';
 import { DropdownModule } from 'primeng/dropdown';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { EditorModule } from 'primeng/editor';
+import { InputMaskModule } from 'primeng/inputmask';
 
 import { AppComponent } from './app.component';
 import { GruposPesquisaComponent } from './grupos-pesquisa/grupos-pesquisa.component';
@@ -48,7 +49,8 @@ import { NoticiaCadastroComponent } from './noticia-cadastro/noticia-cadastro.co
     SpinnerModule,
     DropdownModule,
     EditorModule,
-    MultiSelectModule
+    MultiSelectModule,
+    InputMaskModule
   ],
   providers: [],
   bootstrap: [AppComponent]
