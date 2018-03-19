@@ -11,12 +11,14 @@ import { CalendarModule } from 'primeng/calendar';
 import { AppComponent } from './app.component';
 import { GruposPesquisaComponent } from './grupos-pesquisa/grupos-pesquisa.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { IntegrantePesquisaComponent } from './integrante-pesquisa/integrante-pesquisa.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GruposPesquisaComponent,
-    NavbarComponent
+    NavbarComponent,
+    IntegrantePesquisaComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,48 @@
+<div class="container">
+
+    <div class="ui-g">
+  
+      <div class="ui-g-12">
+        <h1>Integrantes</h1>
+      </div>
+  
+      <div class="ui-g-12 ui-fluid">
+        <label>Nome do Integrante</label>
+        <input type="text" pInputText />
+      </div>
+      <div class="ui-g-12 ui-fluid">
+        <label>Nome do Grupo</label>
+        <input type="text" pInputText />
+      </div>
+  
+      <div class="ui-g-12">
+        <button pButton type="submit" label="Pesquisar"></button>
+      </div>
+  
+      <div class="ui-g">
+  
+        <div class="ui-g-12">
+          <p-dataTable [value]="integrantes" [paginator]="true" [rows]="5" [responsive]="true">
+            <p-column field="nome" header="Nome"></p-column>
+            <p-column field="celular" header="Celular"></p-column>
+            <p-column field="membroDaIgreja" header="Membro da Igreja"></p-column>
+            <p-column field="outraIgreja" header="Nome da Igreja"></p-column>
+            <p-column field="cadastroEfetivado" header="Efetivado"></p-column>
+            <p-column styleClass="col-acoes">
+              <ng-template pTemplate="body">
+                <a pButton icon="fa-pencil" pTooltip="Editar" pTooltipPosition="top"></a>
+                <button pButton icon="fa-trash" pTooltip="Excluir" pTooltipPosition="top"></button>
+              </ng-template>
+            </p-column>
+          </p-dataTable>
+        </div>
+  
+      </div>
+  
+      <div class="ui-g-12">
+          <a pButton label="Novo Integrante"></a>
+        </div>
+  
+    </div>
+  
+  </div>
