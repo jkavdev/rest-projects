@@ -15,9 +15,11 @@ public class Endereco {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private String logradouro;
+	private String rua;
 
 	private String numero;
+	
+	private String bairro;
 
 	private String cidade;
 
@@ -30,23 +32,25 @@ public class Endereco {
 	
 	private Endereco() {}
 	
-	public Endereco(String logradouro, String numero, String cidade, UF uf, String cep, String complemento) {
-		this.logradouro = logradouro;
+	public Endereco(String rua, String numero, String cidade, UF uf, String cep, String complemento, String bairro) {
+		this.rua = rua;
 		this.numero = numero;
 		this.cidade = cidade;
 		this.uf = uf;
 		this.cep = cep;
 		this.complemento = complemento;
+		this.bairro = bairro;
 	}
 	
 	public static Endereco empty() {
 		Endereco empty = new Endereco();
-		empty.logradouro = "";
+		empty.rua = "";
 		empty.numero = "";
 		empty.cidade = "";
 		empty.uf = UF.NONE;
 		empty.cep = "";
 		empty.complemento = "";
+		empty.bairro = "";
 		return empty;
 	}
 
@@ -79,8 +83,9 @@ public class Endereco {
 	public String toString() {
 		return new ToStringCreator(this)
 				.append("id", id)
-				.append("logradouro", logradouro)
+				.append("rua", rua)
 				.append("numero", numero)
+				.append("bairro", bairro)
 				.append("cidade", cidade)
 				.append("uf", uf)
 				.append("cep", cep)

@@ -29,6 +29,9 @@ public class Grupo {
 	private String nome;
 	
 	@NotBlank
+	private String objetivo;
+	
+	@NotBlank
 	private String igreja;
 	
 	@ManyToMany
@@ -46,15 +49,17 @@ public class Grupo {
 	
 	private Grupo() {}
 	
-	public Grupo(Long id, String nome, String igreja) {
+	public Grupo(Long id, String nome, String objetivo, String igreja) {
 		this.id = id;
 		this.nome = nome;
+		this.objetivo = objetivo;
 		this.igreja = igreja;
 	}
 
 	public static Grupo empty() {
 		Grupo empty = new Grupo();
 		empty.nome = "";
+		empty.objetivo = "";
 		empty.igreja = "";
 		return empty;
 	}
@@ -70,6 +75,9 @@ public class Grupo {
 	}
 	public void setIgreja(String igreja) {
 		this.igreja = igreja;
+	}
+	public String getObjetivo() {
+		return objetivo;
 	}
 	
 	@Override

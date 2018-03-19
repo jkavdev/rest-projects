@@ -10,12 +10,15 @@ import { DataTableModule } from 'primeng/datatable';
 import { TooltipModule } from 'primeng/tooltip';
 import { CalendarModule } from 'primeng/calendar';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { SpinnerModule } from 'primeng/spinner';
+import { DropdownModule } from 'primeng/dropdown';
 
 import { AppComponent } from './app.component';
 import { GruposPesquisaComponent } from './grupos-pesquisa/grupos-pesquisa.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { IntegrantePesquisaComponent } from './integrante-pesquisa/integrante-pesquisa.component';
 import { GruposCadastroComponent } from './grupos-cadastro/grupos-cadastro.component';
+import { EventoCadastroComponent } from './evento-cadastro/evento-cadastro.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,8 @@ import { GruposCadastroComponent } from './grupos-cadastro/grupos-cadastro.compo
     GruposPesquisaComponent,
     NavbarComponent,
     IntegrantePesquisaComponent,
-    GruposCadastroComponent
+    GruposCadastroComponent,
+    EventoCadastroComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,9 @@ import { GruposCadastroComponent } from './grupos-cadastro/grupos-cadastro.compo
     DataTableModule,
     TooltipModule,
     InputTextModule,
-    InputTextareaModule
+    InputTextareaModule,
+    SpinnerModule,
+    DropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,79 @@
+<div class="container">
+
+    <form>
+  
+      <div class="ui-g">
+    
+        <div class="ui-g-12">
+          <h1>Novo Evento</h1>
+        </div>
+    
+        <div class="ui-g-12 ui-md-6 ui-fluid">
+          <label>Data do Evento</label>
+          <p-calendar></p-calendar>
+        </div>
+        <div class="ui-g-12 ui-md-6 ui-fluid">
+          <label>Descrição do Evento</label>
+          <input type="text" pInputText />
+        </div>
+        <div class="ui-g-12 ui-md-6 ui-fluid">
+          <label>Valor do Evento</label>
+          <input type="text" pInputText currencyMask placeholder="0,00" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', allowNegative: false}"/>
+        </div>
+        <div class="ui-g-12 ui-md-6 ui-fluid">
+          <label>Lotação Máxima</label>
+          <p-spinner size="100"></p-spinner>
+        </div>
+        <div class="ui-g-12 ui-md-6 ui-fluid">
+          <label>Grupo</label>
+          <p-dropdown [options]="grupos"></p-dropdown>
+        </div>
+        <div class="ui-g-12 ui-fluid">
+          <label>Objetivo do Evento</label>
+          <textarea pInputTextarea autoResize="false"></textarea>
+        </div>
+
+        <div class="ui-g-12">
+          <h2>Endereço do Evento</h2>
+        </div>
+
+        <div class="ui-g-12 ui-md-6 ui-fluid">
+          <label>CEP</label>
+          <input type="text" pInputText />
+        </div>
+        <div class="ui-g-12 ui-md-6 ui-fluid">
+          <label>Rua</label>
+          <input type="text" pInputText />
+        </div>
+        <div class="ui-g-12 ui-md-6 ui-fluid">
+          <label>Número</label>
+          <input type="text" pInputText />
+        </div>
+        <div class="ui-g-12 ui-md-6 ui-fluid">
+          <label>Bairro</label>
+          <input type="text" pInputText />
+        </div>
+        <div class="ui-g-12 ui-md-6 ui-fluid">
+          <label>Cidade</label>
+          <input type="text" pInputText />
+        </div>
+        <div class="ui-g-12 ui-md-6 ui-fluid">
+          <label>UF</label>
+          <p-dropdown [options]="grupos"></p-dropdown>
+        </div>
+        <div class="ui-g-12 ui-fluid">
+          <label>Complemento</label>
+          <textarea pInputTextarea autoResize="false"></textarea>
+        </div>
+  
+        <div class="ui-g-12">
+          <button type="submit" pButton label="Salvar"></button>
+          <button type="submit" pButton label="Novo" class="ui-button-info"></button>
+          <a href="javascript:;">Voltar para a Pesquisa</a>
+        </div>
+    
+      </div>
+  
+    </form>
+  
+  </div>
