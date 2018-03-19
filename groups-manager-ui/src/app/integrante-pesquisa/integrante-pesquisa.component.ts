@@ -7,12 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IntegrantePesquisaComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
-  integrantes: [
+  integrantes = [
     { nome: 'Jhonatan', celular: '12345678', membroDaIgreja: "true", outraIgreja: "", cadastroEfetivado: "false" },
     { nome: 'Lucas', celular: '12345678', membroDaIgreja: "false", outraIgreja: "Catolica de Santos", cadastroEfetivado: "false" },
     { nome: 'Dougals', celular: '12345678', membroDaIgreja: "true", outraIgreja: "", cadastroEfetivado: "false" }

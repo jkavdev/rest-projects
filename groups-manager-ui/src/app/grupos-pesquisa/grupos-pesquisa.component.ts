@@ -7,15 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GruposPesquisaComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
-  grupos: [
-    { nome: 'Movimento', igreja: 'Catolica' },
-    { nome: 'Gam', igreja: 'Merge' },
-    { nome: 'Grupos', igreja: 'Santa' }
+  grupos = [
+    { nome: 'GAM', igreja: "Católica" },
+    { nome: 'Movimento', igreja: "Pentencostal" }
   ];
 
 }
