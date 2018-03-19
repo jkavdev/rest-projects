@@ -1,38 +1,42 @@
 <div class="container">
 
-    <form>
-  
-      <div class="ui-g">
-    
-        <div class="ui-g-12">
-          <h1>Nova Notícia</h1>
-        </div>
-    
-        <div class="ui-g-12 ui-fluid">
-          <label>Título</label>
-          <input type="text" pInputText />
-        </div>
-        <div class="ui-g-12 ui-md-6 ui-fluid">
-          <label>Tópicos</label>
-          <p-multiSelect [options]="topicos" placeholder="Selecione"></p-multiSelect>
-        </div>
-        <div class="ui-g-12 ui-md-6 ui-fluid">
-            <label>Grupo</label>
-            <p-dropdown [autoWidth]="false" [options]="grupos" placeholder="Selecione" #grupo></p-dropdown>
-          </div>
-        <div class="ui-g-12 ui-fluid">
-          <label>Notícia</label>
-          <p-editor [style]="{'height':'320px'}"></p-editor>
-        </div>
+  <form autocomplete="off" #noticiaForm="ngForm">
 
-        <div class="ui-g-12">
-          <button type="submit" pButton label="Salvar"></button>
-          <button type="submit" pButton label="Novo" class="ui-button-info"></button>
-          <a href="javascript:;">Voltar para a Pesquisa</a>
-        </div>
-    
+    <div class="ui-g">
+
+      <div class="ui-g-12">
+        <h1>Nova Notícia</h1>
       </div>
-  
-    </form>
-  
-  </div>
+
+      <div class="ui-g-12 ui-fluid">
+        <label>Título</label>
+        <input type="text" pInputText name="titulo" ngModel #titulo="ngModel" required />
+        <app-message [control]="titulo" error="required" text="Informe o título da notícia"></app-message>
+      </div>
+      <div class="ui-g-12 ui-md-6 ui-fluid">
+        <label>Tópicos</label>
+        <p-multiSelect [options]="topicos" name="topicos" ngModel #topicos="ngModel" required></p-multiSelect>
+        <app-message [control]="topicos" error="required" text="Informe o tópico da notícia"></app-message>
+      </div>
+      <div class="ui-g-12 ui-md-6 ui-fluid">
+        <label>Grupo</label>
+        <p-dropdown [autoWidth]="false" [options]="grupos" placeholder="Selecione" name="grupo" ngModel #grupo="ngModel"></p-dropdown>
+        <app-message [control]="grupo" error="required" text="Informe o grupo da notícia"></app-message>
+      </div>
+      <div class="ui-g-12 ui-fluid">
+        <label>Notícia</label>
+        <p-editor [style]="{'height':'320px'}" name="corpoNoticia" ngModel #corpoNoticia="ngModel"></p-editor>
+        <app-message [control]="corpoNoticia" error="required" text="Informe o grupo da notícia"></app-message>
+      </div>
+
+      <div class="ui-g-12">
+        <button type="submit" pButton label="Salvar" [disabled]="!noticiaForm.valid"></button>
+        <button type="submit" pButton label="Novo" class="ui-button-info"></button>
+        <a href="javascript:;">Voltar para a Pesquisa</a>
+      </div>
+
+    </div>
+
+  </form>
+
+</div>
