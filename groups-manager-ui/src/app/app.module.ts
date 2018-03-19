@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { CurrencyMaskModule } from "ng2-currency-mask";
 
@@ -12,6 +13,8 @@ import { CalendarModule } from 'primeng/calendar';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { SpinnerModule } from 'primeng/spinner';
 import { DropdownModule } from 'primeng/dropdown';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { EditorModule } from 'primeng/editor';
 
 import { AppComponent } from './app.component';
 import { GruposPesquisaComponent } from './grupos-pesquisa/grupos-pesquisa.component';
@@ -19,6 +22,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { IntegrantePesquisaComponent } from './integrante-pesquisa/integrante-pesquisa.component';
 import { GruposCadastroComponent } from './grupos-cadastro/grupos-cadastro.component';
 import { EventoCadastroComponent } from './evento-cadastro/evento-cadastro.component';
+import { NoticiaCadastroComponent } from './noticia-cadastro/noticia-cadastro.component';
 
 @NgModule({
   declarations: [
@@ -27,10 +31,12 @@ import { EventoCadastroComponent } from './evento-cadastro/evento-cadastro.compo
     NavbarComponent,
     IntegrantePesquisaComponent,
     GruposCadastroComponent,
-    EventoCadastroComponent
+    EventoCadastroComponent,
+    NoticiaCadastroComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     CurrencyMaskModule,
     BrowserAnimationsModule,
     CalendarModule,
@@ -40,7 +46,9 @@ import { EventoCadastroComponent } from './evento-cadastro/evento-cadastro.compo
     InputTextModule,
     InputTextareaModule,
     SpinnerModule,
-    DropdownModule
+    DropdownModule,
+    EditorModule,
+    MultiSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
