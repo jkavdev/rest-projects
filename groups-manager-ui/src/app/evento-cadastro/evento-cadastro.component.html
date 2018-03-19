@@ -18,7 +18,7 @@
         </div>
         <div class="ui-g-12 ui-md-6 ui-fluid">
           <label>Valor do Evento</label>
-          <input type="text" pInputText currencyMask placeholder="0,00" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', allowNegative: false}"/>
+          <input type="text" name="valor" ngModel pInputText currencyMask placeholder="0,00" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', allowNegative: false}"/>
         </div>
         <div class="ui-g-12 ui-md-6 ui-fluid">
           <label>Lotação Máxima</label>
