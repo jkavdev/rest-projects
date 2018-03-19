@@ -18,21 +18,18 @@ import { EditorModule } from 'primeng/editor';
 import { InputMaskModule } from 'primeng/inputmask';
 
 import { AppComponent } from './app.component';
-import { GruposPesquisaComponent } from './grupos-pesquisa/grupos-pesquisa.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { IntegrantePesquisaComponent } from './integrante-pesquisa/integrante-pesquisa.component';
-import { GruposCadastroComponent } from './grupos-cadastro/grupos-cadastro.component';
 import { EventoCadastroComponent } from './evento-cadastro/evento-cadastro.component';
 import { NoticiaCadastroComponent } from './noticia-cadastro/noticia-cadastro.component';
 import { MessageComponent } from './message/message.component';
+import { GruposModule } from './grupos/grupos.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GruposPesquisaComponent,
     NavbarComponent,
     IntegrantePesquisaComponent,
-    GruposCadastroComponent,
     EventoCadastroComponent,
     NoticiaCadastroComponent,
     MessageComponent
@@ -41,6 +38,9 @@ import { MessageComponent } from './message/message.component';
     BrowserModule,
     FormsModule,
     CurrencyMaskModule,
+
+    GruposModule,
+
     BrowserAnimationsModule,
     CalendarModule,
     ButtonModule,
