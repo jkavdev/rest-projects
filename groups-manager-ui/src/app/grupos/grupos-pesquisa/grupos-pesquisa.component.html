@@ -21,7 +21,7 @@
     <div class="ui-g">
 
       <div class="ui-g-12">
-        <p-dataTable [value]="grupos" [paginator]="true" [rows]="5" [responsive]="true">
+        <p-dataTable [value]="grupos" [paginator]="true" [rows]="5" [responsive]="true" emptyMessage="Nenhum grupo encontrado">
           <p-column field="nome" header="Nome"></p-column>
           <p-column field="igreja" header="Igreja"></p-column>
           <p-column styleClass="col-acoes">

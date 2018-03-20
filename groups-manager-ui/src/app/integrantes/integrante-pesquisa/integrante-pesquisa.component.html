@@ -25,9 +25,21 @@
         <p-dataTable [value]="integrantes" [paginator]="true" [rows]="5" [responsive]="true">
           <p-column field="nome" header="Nome"></p-column>
           <p-column field="celular" header="Celular"></p-column>
-          <p-column field="membroDaIgreja" header="Membro da Igreja"></p-column>
-          <p-column field="outraIgreja" header="Nome da Igreja"></p-column>
-          <p-column field="cadastroEfetivado" header="Efetivado"></p-column>
+          <p-column field="membroDaIgreja" header="Membro da Igreja">
+            <ng-template let-integrante="rowData" pTemplate="body">
+              {{ integrante.membroDaIgreja ? 'Sim' : 'Não' }}
+            </ng-template>
+          </p-column>
+          <p-column field="outraIgreja" header="Nome da Igreja">
+            <ng-template let-integrante="rowData" pTemplate="body">
+              {{integrante.outraIgreja}}
+            </ng-template>
+          </p-column>
+          <p-column field="cadastroEfetivado" header="Efetivado">
+            <ng-template let-integrante="rowData" pTemplate="body">
+              {{ integrante.cadastroEfetivado ? 'Sim' : 'Não' }}
+            </ng-template>
+          </p-column>
           <p-column styleClass="col-acoes">
             <ng-template pTemplate="body">
               <a pButton icon="fa-pencil" pTooltip="Editar" pTooltipPosition="top"></a>
