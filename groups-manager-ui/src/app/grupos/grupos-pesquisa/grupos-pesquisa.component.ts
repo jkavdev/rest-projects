@@ -15,10 +15,11 @@ export class GruposPesquisaComponent implements OnInit {
     this.pesquisar();
   }
 
+  nome: string;
   grupos = [];
 
   pesquisar() {
-    this.grupoService.pesquisar()
+    this.grupoService.pesquisar({ nome: this.nome })
       .then(grupos => this.grupos = grupos);
   }
 

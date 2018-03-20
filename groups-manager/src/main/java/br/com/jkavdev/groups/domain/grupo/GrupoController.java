@@ -16,9 +16,9 @@ public class GrupoController {
 	@Autowired
 	private GrupoRepository grupoRepository;
 
-	@GetMapping
-	private List<Grupo> todosGrupos() {
-		return grupoRepository.findAll();
+	@GetMapping(params = "pesquisa")
+	private List<Grupo> filtrar(GrupoFilter filter) {
+		return grupoRepository.filtrar(filter);
 	}
 
 }
