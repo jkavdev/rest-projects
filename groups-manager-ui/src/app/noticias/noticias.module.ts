@@ -10,6 +10,8 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { EditorModule } from 'primeng/editor';
 import { DropdownModule } from 'primeng/dropdown';
 
+import { SharedModule } from '../shared/shared.module';
+
 import { NoticiaCadastroComponent } from './noticia-cadastro/noticia-cadastro.component';
 
 @NgModule({
@@ -22,7 +24,9 @@ import { NoticiaCadastroComponent } from './noticia-cadastro/noticia-cadastro.co
     InputTextModule,
     EditorModule,
     MultiSelectModule,
-    DropdownModule
+    DropdownModule,
+
+    SharedModule
   ],
   declarations: [
     NoticiaCadastroComponent

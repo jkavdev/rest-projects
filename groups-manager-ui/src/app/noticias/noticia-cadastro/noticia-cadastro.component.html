@@ -11,22 +11,22 @@
       <div class="ui-g-12 ui-fluid">
         <label>Título</label>
         <input type="text" pInputText name="titulo" ngModel #titulo="ngModel" required />
-        <!-- <app-message [control]="titulo" error="required" text="Informe o título da notícia"></app-message> -->
+        <app-message [control]="titulo" error="required" text="Informe o título da notícia"></app-message>
       </div>
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Tópicos</label>
         <p-multiSelect [options]="topicos" name="topicos" ngModel #topicos="ngModel" required></p-multiSelect>
-        <!-- <app-message [control]="topicos" error="required" text="Informe o tópico da notícia"></app-message> -->
+        <app-message [control]="topicos" error="required" text="Informe o tópico da notícia"></app-message>
       </div>
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Grupo</label>
         <p-dropdown [autoWidth]="false" [options]="grupos" placeholder="Selecione" name="grupo" ngModel #grupo="ngModel"></p-dropdown>
-        <!-- <app-message [control]="grupo" error="required" text="Informe o grupo da notícia"></app-message> -->
+        <app-message [control]="grupo" error="required" text="Informe o grupo da notícia"></app-message>
       </div>
       <div class="ui-g-12 ui-fluid">
         <label>Notícia</label>
         <p-editor [style]="{'height':'320px'}" name="corpoNoticia" ngModel #corpoNoticia="ngModel"></p-editor>
-        <!-- <app-message [control]="corpoNoticia" error="required" text="Informe o grupo da notícia"></app-message> -->
+        <app-message [control]="corpoNoticia" error="required" text="Informe o grupo da notícia"></app-message>
       </div>
 
       <div class="ui-g-12">

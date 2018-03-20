@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { CurrencyMaskModule } from 'ng2-currency-mask';
+
 import { InputMaskModule } from 'primeng/inputmask';
 import { CalendarModule } from 'primeng/calendar';
 import { SpinnerModule } from 'primeng/spinner';
@@ -11,8 +13,9 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 
+import { SharedModule } from '../shared/shared.module';
+
 import { EventoCadastroComponent } from './evento-cadastro/evento-cadastro.component';
-import { CurrencyMaskModule } from 'ng2-currency-mask';
 
 @NgModule({
   imports: [
@@ -21,14 +24,16 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
     BrowserAnimationsModule,
 
     CurrencyMaskModule,
-    
+
     CalendarModule,
     ButtonModule,
     InputTextModule,
     InputTextareaModule,
     SpinnerModule,
     DropdownModule,
-    InputMaskModule
+    InputMaskModule,
+
+    SharedModule
   ],
   declarations: [
     EventoCadastroComponent

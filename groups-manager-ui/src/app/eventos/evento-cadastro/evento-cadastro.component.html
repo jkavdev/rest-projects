@@ -1,90 +1,90 @@
 <div class="container">
 
-    <form autocomplete="off" #eventoForm="ngForm">
-  
-      <div class="ui-g">
-    
-        <div class="ui-g-12">
-          <h1>Novo Evento</h1>
-        </div>
-    
-        <div class="ui-g-12 ui-md-6 ui-fluid">
-          <label>Data do Evento</label>
-          <p-calendar name="data" ngModel #data="ngModel" required></p-calendar>
-          <!-- <app-message [control]="data" error="required" text="Informe data do Evento"></app-message> -->
-        </div>
-        <div class="ui-g-12 ui-md-6 ui-fluid">
-          <label>Descrição do Evento</label>
-          <input type="text" pInputText name="descricao" ngModel #descricao="ngModel" required/>
-          <!-- <app-message [control]="descricao" error="required" text="Informe descrição do Evento"></app-message> -->
-        </div>
-        <div class="ui-g-12 ui-md-6 ui-fluid">
-          <label>Valor do Evento</label>
-          <input type="text" name="valor" ngModel pInputText currencyMask placeholder="0,00" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', allowNegative: false}"/>
-        </div>
-        <div class="ui-g-12 ui-md-6 ui-fluid">
-          <label>Lotação Máxima</label>
-          <p-spinner size="100" name="lotacao" ngModel #lotacao="ngModel" required></p-spinner>
-          <!-- <app-message [control]="lotacao" error="required" text="Informe lotação máxima do Evento"></app-message> -->
-        </div>
-        <div class="ui-g-12 ui-md-6 ui-fluid">
-          <label>Grupo</label>
-          <p-dropdown [autoWidth]="false" [options]="grupos" name="grupo" ngModel #grupo="ngModel" required></p-dropdown>
-          <!-- <app-message [control]="grupo" error="required" text="Informe o Grupo"></app-message> -->
-        </div>
-        <div class="ui-g-12 ui-fluid">
-          <label>Objetivo do Evento</label>
-          <textarea pInputTextarea autoResize="false" name="objetivo" ngModel #objetivo="ngModel" required></textarea>
-          <!-- <app-message [control]="objetivo" error="required" text="Informe o objetivo do Evento"></app-message> -->
-        </div>
+  <form autocomplete="off" #eventoForm="ngForm">
 
-        <div class="ui-g-12">
-          <h2>Endereço do Evento</h2>
-        </div>
+    <div class="ui-g">
 
-        <div class="ui-g-12 ui-md-6 ui-fluid">
-          <label>CEP</label>
-          <p-inputMask mask="99.999-999" name="cep" ngModel #cep="ngModel" required></p-inputMask>
-          <!-- <app-message [control]="cep" error="required" text="Informe o CEP do Evento"></app-message> -->
-        </div>
-        <div class="ui-g-12 ui-md-6 ui-fluid">
-          <label>Rua</label>
-          <input type="text" pInputText name="rua" ngModel #rua="ngModel" required/>
-          <!-- <app-message [control]="rua" error="required" text="Informe a rua do Evento"></app-message> -->
-        </div>
-        <div class="ui-g-12 ui-md-6 ui-fluid">
-          <label>Número</label>
-          <input type="text" pInputText name="numero" ngModel #numero="ngModel" required/>
-          <!-- <app-message [control]="numero" error="required" text="Informe o número do endereço do Evento"></app-message> -->
-        </div>
-        <div class="ui-g-12 ui-md-6 ui-fluid">
-          <label>Bairro</label>
-          <input type="text" pInputText name="bairro" ngModel #bairro="ngModel" required/>
-          <!-- <app-message [control]="bairro" error="required" text="Informe o bairro do Evento"></app-message> -->
-        </div>
-        <div class="ui-g-12 ui-md-6 ui-fluid">
-          <label>Cidade</label>
-          <input type="text" pInputText name="cidade" ngModel #cidade="ngModel" required/>
-          <!-- <app-message [control]="cidade" error="required" text="Informe a cidade do Evento"></app-message> -->
-        </div>
-        <div class="ui-g-12 ui-md-6 ui-fluid">
-          <label>UF</label>
-          <p-dropdown [autoWidth]="false" [options]="ufs" name="uf" ngModel #uf="ngModel" required></p-dropdown>
-          <!-- <app-message [control]="uf" error="required" text="Informe o estado do Evento"></app-message> -->
-        </div>
-        <div class="ui-g-12 ui-fluid">
-          <label>Complemento</label>
-          <textarea pInputTextarea autoResize="false"></textarea>
-        </div>
-  
-        <div class="ui-g-12">
-          <button type="submit" pButton label="Salvar" [disabled]="!eventoForm.valid"></button>
-          <button type="submit" pButton label="Novo" class="ui-button-info"></button>
-          <a href="javascript:;">Voltar para a Pesquisa</a>
-        </div>
-    
+      <div class="ui-g-12">
+        <h1>Novo Evento</h1>
       </div>
-  
-    </form>
-  
-  </div>
+
+      <div class="ui-g-12 ui-md-6 ui-fluid">
+        <label>Data do Evento</label>
+        <p-calendar name="data" ngModel #data="ngModel" required></p-calendar>
+        <app-message [control]="data" error="required" text="Informe data do Evento"></app-message>
+      </div>
+      <div class="ui-g-12 ui-md-6 ui-fluid">
+        <label>Descrição do Evento</label>
+        <input type="text" pInputText name="descricao" ngModel #descricao="ngModel" required/>
+        <app-message [control]="descricao" error="required" text="Informe descrição do Evento"></app-message>
+      </div>
+      <div class="ui-g-12 ui-md-6 ui-fluid">
+        <label>Valor do Evento</label>
+        <input type="text" name="valor" ngModel pInputText currencyMask placeholder="0,00" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', allowNegative: false}" />
+      </div>
+      <div class="ui-g-12 ui-md-6 ui-fluid">
+        <label>Lotação Máxima</label>
+        <p-spinner size="100" name="lotacao" ngModel #lotacao="ngModel" required></p-spinner>
+        <app-message [control]="lotacao" error="required" text="Informe lotação máxima do Evento"></app-message>
+      </div>
+      <div class="ui-g-12 ui-md-6 ui-fluid">
+        <label>Grupo</label>
+        <p-dropdown [autoWidth]="false" [options]="grupos" name="grupo" ngModel #grupo="ngModel" required></p-dropdown>
+        <app-message [control]="grupo" error="required" text="Informe o Grupo"></app-message>
+      </div>
+      <div class="ui-g-12 ui-fluid">
+        <label>Objetivo do Evento</label>
+        <textarea pInputTextarea autoResize="false" name="objetivo" ngModel #objetivo="ngModel" required></textarea>
+        <app-message [control]="objetivo" error="required" text="Informe o objetivo do Evento"></app-message>
+      </div>
+
+      <div class="ui-g-12">
+        <h2>Endereço do Evento</h2>
+      </div>
+
+      <div class="ui-g-12 ui-md-6 ui-fluid">
+        <label>CEP</label>
+        <p-inputMask mask="99.999-999" name="cep" ngModel #cep="ngModel" required></p-inputMask>
+        <app-message [control]="cep" error="required" text="Informe o CEP do Evento"></app-message>
+      </div>
+      <div class="ui-g-12 ui-md-6 ui-fluid">
+        <label>Rua</label>
+        <input type="text" pInputText name="rua" ngModel #rua="ngModel" required/>
+        <app-message [control]="rua" error="required" text="Informe a rua do Evento"></app-message>
+      </div>
+      <div class="ui-g-12 ui-md-6 ui-fluid">
+        <label>Número</label>
+        <input type="text" pInputText name="numero" ngModel #numero="ngModel" required/>
+        <app-message [control]="numero" error="required" text="Informe o número do endereço do Evento"></app-message>
+      </div>
+      <div class="ui-g-12 ui-md-6 ui-fluid">
+        <label>Bairro</label>
+        <input type="text" pInputText name="bairro" ngModel #bairro="ngModel" required/>
+        <app-message [control]="bairro" error="required" text="Informe o bairro do Evento"></app-message>
+      </div>
+      <div class="ui-g-12 ui-md-6 ui-fluid">
+        <label>Cidade</label>
+        <input type="text" pInputText name="cidade" ngModel #cidade="ngModel" required/>
+        <app-message [control]="cidade" error="required" text="Informe a cidade do Evento"></app-message>
+      </div>
+      <div class="ui-g-12 ui-md-6 ui-fluid">
+        <label>UF</label>
+        <p-dropdown [autoWidth]="false" [options]="ufs" name="uf" ngModel #uf="ngModel" required></p-dropdown>
+        <app-message [control]="uf" error="required" text="Informe o estado do Evento"></app-message>
+      </div>
+      <div class="ui-g-12 ui-fluid">
+        <label>Complemento</label>
+        <textarea pInputTextarea autoResize="false"></textarea>
+      </div>
+
+      <div class="ui-g-12">
+        <button type="submit" pButton label="Salvar" [disabled]="!eventoForm.valid"></button>
+        <button type="submit" pButton label="Novo" class="ui-button-info"></button>
+        <a href="javascript:;">Voltar para a Pesquisa</a>
+      </div>
+
+    </div>
+
+  </form>
+
+</div>

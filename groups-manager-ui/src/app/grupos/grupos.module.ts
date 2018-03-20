@@ -8,6 +8,8 @@ import { ButtonModule } from 'primeng/button';
 import { DataTableModule } from 'primeng/datatable';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 
+import { SharedModule } from '../shared/shared.module';
+
 import { GruposCadastroComponent } from './grupos-cadastro/grupos-cadastro.component';
 import { GruposPesquisaComponent } from './grupos-pesquisa/grupos-pesquisa.component';
 
@@ -20,7 +22,9 @@ import { GruposPesquisaComponent } from './grupos-pesquisa/grupos-pesquisa.compo
     ButtonModule,
     DataTableModule,
     InputTextModule,
-    InputTextareaModule
+    InputTextareaModule,
+
+    SharedModule
   ],
   declarations: [
     GruposCadastroComponent,
