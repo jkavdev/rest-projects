@@ -11,6 +11,7 @@ import { IntegrantesModule } from './integrantes/integrantes.module';
 import { NoticiasModule } from './noticias/noticias.module';
 import { HttpModule } from '@angular/http';
 import { GrupoService } from './grupos/grupo.service';
+import { IntegranteService } from './integrantes/integrante.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,10 @@ import { GrupoService } from './grupos/grupo.service';
     IntegrantesModule,
     NoticiasModule
   ],
-  providers: [GrupoService],
+  providers: [
+    GrupoService,
+    IntegranteService
+  ],
   bootstrap: [AppComponent],
   exports: [
     

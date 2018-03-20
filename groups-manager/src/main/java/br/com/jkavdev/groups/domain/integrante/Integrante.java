@@ -33,16 +33,16 @@ public class Integrante {
 	private String cpf;
 	
 	@Column(name = "membro_da_igreja")
-	private boolean membroDaIgreja;
+	private Boolean membroDaIgreja;
 	
 	@Column(name = "membro_de_outra_igreja")
-	private boolean membroDeOutraIgreja;
+	private Boolean membroDeOutraIgreja;
 	
 	@Column(name = "nome_da_outra_igreja")
 	private String outraIgreja;
 	
 	@Column(name = "cadastro_efetivado")
-	private boolean cadastroEfetivado;
+	private Boolean cadastroEfetivado;
 	
 	private Integrante() {}
 
@@ -65,12 +65,16 @@ public class Integrante {
 		empty.sexo = Sexo.MASCULINO;
 		empty.cpf = "";
 		empty.dataNascimento = LocalDate.now();
-		empty.membroDaIgreja = false;
-		empty.membroDeOutraIgreja = false;
+		empty.membroDaIgreja = Boolean.FALSE;
+		empty.membroDeOutraIgreja = Boolean.FALSE;
 		empty.outraIgreja = "";
-		empty.cadastroEfetivado = false;
+		empty.cadastroEfetivado = Boolean.FALSE;
 		return empty;
 	}
-	
 
+	@Override
+	public String toString() {
+		return "Integrante [nome=" + nome + ", email=" + email + "]";
+	}
+	
 }

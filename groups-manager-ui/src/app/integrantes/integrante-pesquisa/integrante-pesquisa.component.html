@@ -2,22 +2,22 @@
 
   <div class="ui-g">
 
-    <div class="ui-g-12">
-      <h1>Integrantes</h1>
-    </div>
+    <form autocomplete="off" (ngSubmit)="pesquisar()">
+      <div class="ui-g-12">
+        <h1>Integrantes</h1>
+      </div>
 
-    <div class="ui-g-12 ui-fluid">
-      <label>Nome do Integrante</label>
-      <input type="text" pInputText />
-    </div>
-    <div class="ui-g-12 ui-fluid">
-      <label>Nome do Grupo</label>
-      <input type="text" pInputText />
-    </div>
+      <div class="ui-g-12 ui-fluid">
+        <input type="text" pInputText name="nome" placeholder="Nome do Integrante" [(ngModel)]="nome" />
+      </div>
+      <div class="ui-g-12 ui-fluid">
+        <input type="text" pInputText name="grupo" placeholder="Nome do Grupo" [(ngModel)]="grupo" />
+      </div>
 
-    <div class="ui-g-12">
-      <button pButton type="submit" label="Pesquisar"></button>
-    </div>
+      <div class="ui-g-12">
+        <button pButton type="submit" label="Pesquisar"></button>
+      </div>
+    </form>
 
     <div class="ui-g">
 

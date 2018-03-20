@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { DataTableModule } from 'primeng/datatable';
@@ -11,6 +12,7 @@ import { IntegrantePesquisaComponent } from './integrante-pesquisa/integrante-pe
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     BrowserAnimationsModule,
 
     ButtonModule,
