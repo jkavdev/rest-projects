@@ -6,9 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  grupos: [
-    { nome: 'Movimento', igreja: 'Catolica' },
-    { nome: 'Gam', igreja: 'Merge' },
-    { nome: 'Grupos', igreja: 'Santa' }
-  ];
 }
