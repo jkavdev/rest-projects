@@ -9,6 +9,8 @@ import { GruposModule } from './grupos/grupos.module';
 import { EventosModule } from './eventos/eventos.module';
 import { IntegrantesModule } from './integrantes/integrantes.module';
 import { NoticiasModule } from './noticias/noticias.module';
+import { HttpModule } from '@angular/http';
+import { GrupoService } from './grupos/grupo.service';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,7 @@ import { NoticiasModule } from './noticias/noticias.module';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
 
     CoreModule,
     EventosModule,
@@ -24,7 +27,7 @@ import { NoticiasModule } from './noticias/noticias.module';
     IntegrantesModule,
     NoticiasModule
   ],
-  providers: [],
+  providers: [GrupoService],
   bootstrap: [AppComponent],
   exports: [
     

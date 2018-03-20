@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GrupoService } from '../grupo.service';
 
 @Component({
   selector: 'app-grupos-pesquisa',
@@ -7,15 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GruposPesquisaComponent implements OnInit {
 
-  constructor() {
+  constructor(private grupoService: GrupoService) {
   }
 
   ngOnInit() {
+    this.pesquisar();
   }
 
-  grupos = [
-    { nome: 'GAM', igreja: "Católica" },
-    { nome: 'Movimento', igreja: "Pentencostal" }
-  ];
+  grupos = [];
+
+  pesquisar() {
+    this.grupoService.pesquisar()
+      .then(grupos => this.grupos = grupos);
+  }
 
 }
