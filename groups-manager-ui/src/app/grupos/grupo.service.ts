@@ -26,4 +26,10 @@ export class GrupoService {
       .then(resp => resp.json());
   }
 
+  excluir(codigo: number): Promise<any> {
+    return this.http.delete(`${this.gruposUrl}/${codigo}`)
+      .toPromise()
+      .then(() => null)
+  }
+
 }

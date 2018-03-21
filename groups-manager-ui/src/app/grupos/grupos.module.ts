@@ -7,6 +7,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { DataTableModule } from 'primeng/datatable';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { TooltipModule } from 'primeng/tooltip';
 
 import { SharedModule } from '../shared/shared.module';
 
@@ -23,6 +24,7 @@ import { GruposPesquisaComponent } from './grupos-pesquisa/grupos-pesquisa.compo
     DataTableModule,
     InputTextModule,
     InputTextareaModule,
+    TooltipModule,
 
     SharedModule
   ],

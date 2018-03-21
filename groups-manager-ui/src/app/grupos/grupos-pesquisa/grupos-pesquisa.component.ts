@@ -23,4 +23,11 @@ export class GruposPesquisaComponent implements OnInit {
       .then(grupos => this.grupos = grupos);
   }
 
+  excluir(grupo: any) {
+    this.grupoService.excluir(grupo.id)
+      .then(() => {
+        this.pesquisar();
+      })
+  }
+
 }
