@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { ToastyModule } from 'ng2-toasty';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService } from 'primeng/api';
 
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
@@ -25,6 +27,7 @@ import { IntegranteService } from './integrantes/integrante.service';
     HttpModule,
 
     ToastyModule.forRoot(),
+    ConfirmDialogModule,
 
     CoreModule,
     EventosModule,
@@ -33,12 +36,13 @@ import { IntegranteService } from './integrantes/integrante.service';
     NoticiasModule
   ],
   providers: [
+    ConfirmationService,
     GrupoService,
     IntegranteService
   ],
   bootstrap: [AppComponent],
   exports: [
-    
+
   ]
 })
 export class AppModule { }

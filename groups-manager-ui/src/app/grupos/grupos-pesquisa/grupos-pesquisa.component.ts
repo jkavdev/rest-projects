@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { GrupoService, GrupoFiltro } from '../grupo.service';
 import { ToastyService } from 'ng2-toasty';
+import { ConfirmationService } from 'primeng/components/common/api';
+
+import { GrupoService, GrupoFiltro } from '../grupo.service';
 
 @Component({
   selector: 'app-grupos-pesquisa',
@@ -15,7 +17,8 @@ export class GruposPesquisaComponent implements OnInit {
 
   constructor(
     private grupoService: GrupoService,
-    private toasty: ToastyService
+    private toasty: ToastyService,
+    private confirmation: ConfirmationService
   ) {
   }
 
@@ -25,6 +28,15 @@ export class GruposPesquisaComponent implements OnInit {
   pesquisar() {
     this.grupoService.pesquisar(this.filtro)
       .then(grupos => this.grupos = grupos);
+  }
+
+  confirmarExclusao(grupo: any) {
+    this.confirmation.confirm({
+      message: 'Excluir grupo?',
+      accept: () => {
+        this.excluir(grupo);
+      }
+    });
   }
 
   excluir(grupo: any) {
