@@ -13,7 +13,7 @@ public class GrupoService {
 
 	public void remover(Long id) {
 
-		if (grupoRepository.countByIntegrantes1(id) > 0) {
+		if (grupoRepository.countByIntegrantes(id) > 0) {
 			throw new NegocioException("grupo.com-integrantes");
 		}
 

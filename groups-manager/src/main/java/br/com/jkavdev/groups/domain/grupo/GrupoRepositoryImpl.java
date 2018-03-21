@@ -26,6 +26,12 @@ public class GrupoRepositoryImpl implements GrupoRepositoryQuery {
 			criteria.add(Restrictions.ilike("nome", filter.getNome(), MatchMode.START));
 		}
 
+		/*
+		 select g from Grupo g
+		 where (:nome is null or (:nome is not null and g.nome = :nome) )
+		 and (:igreja is null or (:igreja is not null and g.igreja = :igreja) )
+		 * */
+
 		return criteria.list();
 	}
 
