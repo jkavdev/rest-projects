@@ -1,15 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
-import { CoreModule } from './core/core.module';
+import { ToastyModule } from 'ng2-toasty';
 
 import { AppComponent } from './app.component';
+import { CoreModule } from './core/core.module';
 import { GruposModule } from './grupos/grupos.module';
 import { EventosModule } from './eventos/eventos.module';
 import { IntegrantesModule } from './integrantes/integrantes.module';
 import { NoticiasModule } from './noticias/noticias.module';
-import { HttpModule } from '@angular/http';
+
 import { GrupoService } from './grupos/grupo.service';
 import { IntegranteService } from './integrantes/integrante.service';
 
@@ -21,6 +23,8 @@ import { IntegranteService } from './integrantes/integrante.service';
     BrowserModule,
     FormsModule,
     HttpModule,
+
+    ToastyModule.forRoot(),
 
     CoreModule,
     EventosModule,

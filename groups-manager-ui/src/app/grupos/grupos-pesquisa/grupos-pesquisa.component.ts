@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { GrupoService, GrupoFiltro } from '../grupo.service';
+import { ToastyService } from 'ng2-toasty';
 
 @Component({
   selector: 'app-grupos-pesquisa',
@@ -12,7 +13,10 @@ export class GruposPesquisaComponent implements OnInit {
   filtro = new GrupoFiltro();
   grupos = [];
 
-  constructor(private grupoService: GrupoService) {
+  constructor(
+    private grupoService: GrupoService,
+    private toasty: ToastyService
+  ) {
   }
 
   ngOnInit() {
@@ -27,6 +31,7 @@ export class GruposPesquisaComponent implements OnInit {
     this.grupoService.excluir(grupo.id)
       .then(() => {
         this.pesquisar();
+        this.toasty.success('Grupo removido!');
       })
   }
 
