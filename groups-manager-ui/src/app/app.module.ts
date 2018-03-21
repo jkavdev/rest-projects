@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
@@ -38,7 +38,8 @@ import { IntegranteService } from './integrantes/integrante.service';
   providers: [
     ConfirmationService,
     GrupoService,
-    IntegranteService
+    IntegranteService,
+    {provide: LOCALE_ID, useValue: 'pt-BR'}
   ],
   bootstrap: [AppComponent],
   exports: [
