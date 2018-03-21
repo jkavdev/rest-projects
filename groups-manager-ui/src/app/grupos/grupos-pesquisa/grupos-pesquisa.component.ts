@@ -4,6 +4,7 @@ import { ToastyService } from 'ng2-toasty';
 import { ConfirmationService } from 'primeng/components/common/api';
 
 import { GrupoService, GrupoFiltro } from '../grupo.service';
+import { ErrorHandlerService } from '../../core/error-handler.service';
 
 @Component({
   selector: 'app-grupos-pesquisa',
@@ -18,7 +19,8 @@ export class GruposPesquisaComponent implements OnInit {
   constructor(
     private grupoService: GrupoService,
     private toasty: ToastyService,
-    private confirmation: ConfirmationService
+    private confirmation: ConfirmationService,
+    private errorHandler: ErrorHandlerService
   ) {
   }
 
@@ -27,7 +29,8 @@ export class GruposPesquisaComponent implements OnInit {
 
   pesquisar() {
     this.grupoService.pesquisar(this.filtro)
-      .then(grupos => this.grupos = grupos);
+      .then(grupos => this.grupos = grupos)
+      .catch(erro => this.errorHandler.handle(erro));
   }
 
   confirmarExclusao(grupo: any) {
@@ -45,6 +48,7 @@ export class GruposPesquisaComponent implements OnInit {
         this.pesquisar();
         this.toasty.success('Grupo removido!');
       })
+      .catch(erro => this.errorHandler.handle(erro));
   }
 
 }
