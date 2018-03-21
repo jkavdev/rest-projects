@@ -19,15 +19,18 @@ public class GrupoController {
 
 	@Autowired
 	private GrupoRepository grupoRepository;
+	@Autowired
+	private GrupoService grupoService;
 
 	@GetMapping(params = "pesquisa")
 	private List<Grupo> filtrar(GrupoFilter filter) {
 		return grupoRepository.filtrar(filter);
 	}
+	
 	@DeleteMapping("{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	private void remover(@PathVariable Long id) {
-		grupoRepository.deleteById(id);
+		grupoService.remover(id);
 	}
 
 }

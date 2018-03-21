@@ -82,6 +82,9 @@ public class Grupo {
 	public String getObjetivo() {
 		return objetivo;
 	}
+	public Collection<Integrante> getIntegrantes() {
+		return integrantes;
+	}
 	
 	@Override
 	public String toString() {
