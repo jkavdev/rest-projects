@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GrupoService } from '../grupo.service';
+
+import { GrupoService, GrupoFiltro } from '../grupo.service';
 
 @Component({
   selector: 'app-grupos-pesquisa',
@@ -8,18 +9,17 @@ import { GrupoService } from '../grupo.service';
 })
 export class GruposPesquisaComponent implements OnInit {
 
+  filtro = new GrupoFiltro();
+  grupos = [];
+
   constructor(private grupoService: GrupoService) {
   }
 
   ngOnInit() {
-    this.pesquisar();
   }
 
-  nome: string;
-  grupos = [];
-
   pesquisar() {
-    this.grupoService.pesquisar({ nome: this.nome })
+    this.grupoService.pesquisar(this.filtro)
       .then(grupos => this.grupos = grupos);
   }
 

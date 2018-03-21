@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IntegranteService } from '../integrante.service';
+
+import { IntegranteService, IntegranteFiltro } from '../integrante.service';
 
 @Component({
   selector: 'app-integrante-pesquisa',
@@ -8,19 +9,17 @@ import { IntegranteService } from '../integrante.service';
 })
 export class IntegrantePesquisaComponent implements OnInit {
 
-  nome: string;
-  grupo: string;
+  filtro = new IntegranteFiltro();
   integrantes = [];
 
   constructor(private integranteService: IntegranteService) {
   }
 
   ngOnInit() {
-    this.pesquisar();
   }
 
   pesquisar() {
-    this.integranteService.pesquisar({ nome: this.nome, grupo: this.grupo })
+    this.integranteService.pesquisar(this.filtro)
       .then(integrantes => this.integrantes = integrantes);
   }
 

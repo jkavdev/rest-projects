@@ -3,7 +3,7 @@ import { Http, URLSearchParams } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-export interface IntegranteFiltro {
+export class IntegranteFiltro {
   nome: string;
   grupo: string;
 }
