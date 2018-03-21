@@ -12,11 +12,11 @@ public class GrupoService {
 	private GrupoRepository grupoRepository;
 
 	public void remover(Long id) {
-		
-		if(!grupoRepository.findByIdFetchIntegrantes(id).getIntegrantes().isEmpty()) {
+
+		if (grupoRepository.countByIntegrantes1(id) > 0) {
 			throw new NegocioException("grupo.com-integrantes");
 		}
-		
+
 		grupoRepository.deleteById(id);
 	}
 
