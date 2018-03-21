@@ -27,7 +27,7 @@ export class IntegranteService {
 
     return this.http.get(`${this.integrantesUrl}?pesquisa`, { search: filtro })
       .toPromise()
-      .then(resp => {console.log(resp); resp.json()});
+      .then(resp => resp.json());
   }
 
 }

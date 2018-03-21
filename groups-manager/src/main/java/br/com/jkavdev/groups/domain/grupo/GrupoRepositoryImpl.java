@@ -16,7 +16,7 @@ public class GrupoRepositoryImpl implements GrupoRepositoryQuery {
 	@PersistenceContext
 	private EntityManager manager;
 
-	@SuppressWarnings("deprecation")
+	@SuppressWarnings({ "deprecation", "unchecked" })
 	@Override
 	public List<Grupo> filtrar(GrupoFilter filter) {
 		Session session = manager.unwrap(Session.class);

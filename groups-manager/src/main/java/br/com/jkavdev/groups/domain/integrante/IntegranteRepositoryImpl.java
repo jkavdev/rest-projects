@@ -16,7 +16,7 @@ public class IntegranteRepositoryImpl implements IntegranteRepositoryQuery {
 	@PersistenceContext
 	private EntityManager manager;
 
-	@SuppressWarnings("deprecation")
+	@SuppressWarnings({ "deprecation", "unchecked" })
 	@Override
 	public List<Integrante> filtrar(IntegranteFilter filter) {
 		Session session = manager.unwrap(Session.class);

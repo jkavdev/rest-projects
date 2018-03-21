@@ -71,6 +71,28 @@ public class Integrante {
 		empty.cadastroEfetivado = Boolean.FALSE;
 		return empty;
 	}
+	
+	public String getNome() {
+		return nome;
+	}
+	public String getCelular() {
+		return celular;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public String getCpf() {
+		return cpf;
+	}
+	public Boolean getMembroDaIgreja() {
+		return membroDaIgreja;
+	}
+	public String getOutraIgreja() {
+		return outraIgreja;
+	}
+	public Boolean getCadastroEfetivado() {
+		return cadastroEfetivado;
+	}
 
 	@Override
 	public String toString() {
