@@ -14,6 +14,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.core.style.ToStringCreator;
 
@@ -25,8 +27,10 @@ public class Noticia {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotBlank
 	private String titulo;
 	
+	@NotNull
 	@ElementCollection
 	@JoinTable(
 			name = "topico_noticia",
@@ -34,9 +38,11 @@ public class Noticia {
 	@Enumerated(EnumType.STRING)
 	@Column(name = "topico", nullable = false)
 	private Collection<Topico> topicos = Collections.emptySet();
-	
+
+	@NotBlank
 	private String corpo;
 	
+	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "grupo_id")
 	private Grupo grupo;
