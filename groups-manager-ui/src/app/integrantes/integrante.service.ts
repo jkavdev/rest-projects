@@ -30,4 +30,10 @@ export class IntegranteService {
       .then(resp => resp.json());
   }
 
+  efetivar(id: any): Promise<any> {
+    return this.http.put(`${this.integrantesUrl}/${id}/efetivar`, true)
+      .toPromise()
+      .then(resp => resp.json());
+  }
+
 }

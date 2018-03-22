@@ -72,6 +72,9 @@ public class Integrante {
 		return empty;
 	}
 	
+	public Long getId() {
+		return id;
+	}
 	public String getNome() {
 		return nome;
 	}
@@ -92,6 +95,10 @@ public class Integrante {
 	}
 	public Boolean getCadastroEfetivado() {
 		return cadastroEfetivado;
+	}
+	
+	public void efetivarCadastro() {
+		this.cadastroEfetivado = Boolean.TRUE;
 	}
 
 	@Override

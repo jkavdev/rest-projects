@@ -32,12 +32,17 @@
           </p-column>
           <p-column field="outraIgreja" header="Nome da Igreja">
             <ng-template let-integrante="rowData" pTemplate="body">
-              {{integrante.outraIgreja}}
+              <div [pTooltip]="integrante.outraIgreja ? '' : 'Igreja do Integrante'" tooltipPosition="top">
+                {{ integrante.outraIgreja }}
+              </div>
             </ng-template>
           </p-column>
           <p-column field="cadastroEfetivado" header="Efetivado">
             <ng-template let-integrante="rowData" pTemplate="body">
-              {{ integrante.cadastroEfetivado ? 'Sim' : 'Não' }}
+              <a href="javascript:;" (click)="efetivar(integrante)" [pTooltip]="integrante.cadastroEfetivado ? 'Cadastro efetivado' : 'Efetivar cadastro'"
+                tooltipPosition="top">
+                {{ integrante.cadastroEfetivado ? 'Sim' : 'Não' }}
+              </a>
             </ng-template>
           </p-column>
           <p-column styleClass="col-acoes">
