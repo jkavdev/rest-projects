@@ -8,11 +8,13 @@ import { DataTableModule } from 'primeng/datatable';
 import { ButtonModule } from 'primeng/button';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { EditorModule } from 'primeng/editor';
-import { DropdownModule } from 'primeng/dropdown';
+import { DropdownModule } from 'primeng/dropdown'
+import { AccordionModule } from 'primeng/accordion';
 
 import { SharedModule } from '../shared/shared.module';
 
 import { NoticiaCadastroComponent } from './noticia-cadastro/noticia-cadastro.component';
+import { NoticiaPesquisaComponent } from './noticia-pesquisa/noticia-pesquisa.component';
 
 @NgModule({
   imports: [
@@ -25,13 +27,16 @@ import { NoticiaCadastroComponent } from './noticia-cadastro/noticia-cadastro.co
     EditorModule,
     MultiSelectModule,
     DropdownModule,
+    AccordionModule,
 
     SharedModule
   ],
   declarations: [
-    NoticiaCadastroComponent
+    NoticiaCadastroComponent,
+    NoticiaPesquisaComponent
   ], exports: [
-    NoticiaCadastroComponent
+    NoticiaCadastroComponent,
+    NoticiaPesquisaComponent
   ]
 })
 export class NoticiasModule { }

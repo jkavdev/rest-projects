@@ -1,0 +1,7 @@
+<p-accordion>
+  <div *ngFor="let noticia of noticias">
+    <p-accordionTab header="{noticia.titulo}">
+      {{noticia.corpo}}
+    </p-accordionTab>
+  </div>
+</p-accordion>

@@ -2,6 +2,7 @@ package br.com.jkavdev.groups.domain.noticia;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
@@ -46,6 +47,10 @@ public class Noticia {
 	@ManyToOne
 	@JoinColumn(name = "grupo_id")
 	private Grupo grupo;
+	
+	private List<Boolean> informacaoUtil;
+	
+	private boolean publica;
 	
 	private Noticia() {}
 

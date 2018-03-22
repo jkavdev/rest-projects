@@ -13,8 +13,14 @@ export class NoticiaService {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-    return this.http.post(`${this.noticiasUrl}`, 
-      JSON.stringify(noticia), {headers})
+    return this.http.post(`${this.noticiasUrl}`,
+      JSON.stringify(noticia), { headers })
+      .toPromise()
+      .then(resp => resp.json());
+  }
+
+  buscarTodas(): Promise<any> {
+    return this.http.get(`${this.noticiasUrl}`)
       .toPromise()
       .then(resp => resp.json());
   }
