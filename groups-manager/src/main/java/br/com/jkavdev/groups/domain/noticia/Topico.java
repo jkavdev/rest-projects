@@ -1,8 +1,8 @@
 package br.com.jkavdev.groups.domain.noticia;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-@JsonFormat(shape = JsonFormat.Shape.OBJECT)
+@JsonSerialize(using = TopicoJsonSerializer.class)
 public enum Topico {
 	
 	MUNDO("Mundo"),

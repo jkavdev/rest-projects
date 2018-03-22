@@ -58,6 +58,9 @@ public class Noticia {
 		return empty;
 	}
 	
+	public Long getId() {
+		return id;
+	}
 	public String getTitulo() {
 		return titulo;
 	}
@@ -69,6 +72,15 @@ public class Noticia {
 	}
 	public void setCorpo(String corpo) {
 		this.corpo = corpo;
+	}
+	public Collection<Topico> getTopicos() {
+		return topicos;
+	}
+	public void setTopicos(Collection<Topico> topicos) {
+		this.topicos = topicos;
+	}
+	public void setGrupo(Grupo grupo) {
+		this.grupo = grupo;
 	}
 	
 	@Override

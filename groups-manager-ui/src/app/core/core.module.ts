@@ -10,6 +10,7 @@ import { ErrorHandlerService } from './error-handler.service';
 import { GrupoService } from '../grupos/grupo.service';
 import { IntegranteService } from '../integrantes/integrante.service';
 import { TopicoService } from '../topicos/topico.service';
+import { NoticiaService } from '../noticias/noticia.service';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { TopicoService } from '../topicos/topico.service';
     ErrorHandlerService,
     GrupoService,
     IntegranteService,
-    TopicoService
+    TopicoService,
+    NoticiaService,
     { provide: LOCALE_ID, useValue: 'pt-BR' }
   ]
 })
