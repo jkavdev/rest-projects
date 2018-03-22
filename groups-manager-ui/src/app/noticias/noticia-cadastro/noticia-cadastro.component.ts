@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 import { SelectItem } from 'primeng/api';
 
 import { TopicoService } from '../../topicos/topico.service';
 import { ErrorHandlerService } from '../../core/error-handler.service';
+import { Noticia } from '../../core/model';
 
 @Component({
   selector: 'app-noticia-cadastro',
@@ -16,6 +18,7 @@ export class NoticiaCadastroComponent implements OnInit {
   topicosSelecionados = [];
   grupos = [];
   corpoNoticia: string = '<div>Hello World!</div><div>PrimeNG <b>Editor</b> Rocks</div><div><br></div>';
+  noticia = new Noticia();
 
   constructor(
     private topicoService: TopicoService,
@@ -29,6 +32,10 @@ export class NoticiaCadastroComponent implements OnInit {
       { label: 'GAM', value: { id: 2, name: 'GAM' } },
       { label: 'Movimento', value: { id: 3, name: 'Movimento' } }
     ];
+  }
+
+  salvar(form: FormControl) {
+    console.log(this.noticia);
   }
 
   buscarTopicos() {
