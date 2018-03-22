@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ErrorHandlerService } from './error-handler.service';
 import { GrupoService } from '../grupos/grupo.service';
 import { IntegranteService } from '../integrantes/integrante.service';
+import { TopicoService } from '../topicos/topico.service';
 
 @NgModule({
   imports: [
@@ -30,6 +31,7 @@ import { IntegranteService } from '../integrantes/integrante.service';
     ErrorHandlerService,
     GrupoService,
     IntegranteService,
+    TopicoService
     { provide: LOCALE_ID, useValue: 'pt-BR' }
   ]
 })

@@ -15,8 +15,8 @@
       </div>
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Tópicos</label>
-        <p-multiSelect [options]="topicos" name="topicos" ngModel #topicos="ngModel" required></p-multiSelect>
-        <app-message [control]="topicos" error="required" text="Informe o tópico da notícia"></app-message>
+        <p-multiSelect [options]="topicos" name="topicos" [(ngModel)]="topicosSelecionados" required></p-multiSelect>
+        <!-- <app-message [control]="topicos" error="required" text="Informe o tópico da notícia"></app-message> -->
       </div>
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Grupo</label>

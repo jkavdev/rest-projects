@@ -1,5 +1,8 @@
 package br.com.jkavdev.groups.domain.noticia;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+@JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum Topico {
 	
 	MUNDO("Mundo"),
