@@ -27,12 +27,14 @@
           <p-column field="celular" header="Celular"></p-column>
           <p-column field="membroDaIgreja" header="Membro da Igreja">
             <ng-template let-integrante="rowData" pTemplate="body">
-              {{ integrante.membroDaIgreja ? 'Sim' : 'Não' }}
+              <div [pTooltip]="integrante.membroDaIgreja ? '' : 'Integrante não participa da igreja'" tooltipPosition="top">
+                {{ integrante.membroDaIgreja ? 'Sim' : 'Não' }}
+              </div>
             </ng-template>
           </p-column>
           <p-column field="outraIgreja" header="Nome da Igreja">
             <ng-template let-integrante="rowData" pTemplate="body">
-              <div [pTooltip]="integrante.outraIgreja ? '' : 'Igreja do Integrante'" tooltipPosition="top">
+              <div [pTooltip]="integrante.membroDeOutraIgreja ? '' : 'Igreja do Integrante'" tooltipPosition="top">
                 {{ integrante.outraIgreja }}
               </div>
             </ng-template>
