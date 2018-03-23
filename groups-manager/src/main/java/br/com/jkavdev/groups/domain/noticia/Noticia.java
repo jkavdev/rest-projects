@@ -105,6 +105,9 @@ public class Noticia {
 	public String getFoto() {
 		return foto;
 	}
+	public void setPublica(boolean publica) {
+		this.publica = publica;
+	}
 	
 	public void adiciona(Boolean util) {
 		this.informacaoUtil.add(util);

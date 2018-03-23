@@ -7,5 +7,6 @@ export class Noticia {
     titulo: string;
     corpo: string;
     topicos = [];
+    publica: boolean;
     grupo = new Grupo();
 }
