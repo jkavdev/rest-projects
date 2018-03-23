@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.jkavdev.groups.domain.grupo.Grupo;
+import br.com.jkavdev.groups.domain.grupo.GrupoRepository;
 import br.com.jkavdev.groups.event.RecursoCriadoEvent;
 
 @RestController
@@ -29,6 +31,8 @@ public class NoticiaController {
 
 	@Autowired
 	private NoticiaRepository noticiaRepository;
+	@Autowired
+	private GrupoRepository grupoRepository;
 	@Autowired
 	private ApplicationEventPublisher publisher;
 
@@ -50,6 +54,10 @@ public class NoticiaController {
 	@GetMapping
 	public List<Noticia> listar() {
 		return noticiaRepository.findAll();
+	}
+	@GetMapping("/agrupadas")
+	public List<Grupo> agrupadas() {
+		return grupoRepository.gruposComNoticias();
 	}
 
 }

@@ -24,5 +24,10 @@ export class NoticiaService {
       .toPromise()
       .then(resp => resp.json());
   }
+  grupoComNoticas(): Promise<any> {
+    return this.http.get(`${this.noticiasUrl}/agrupadas`)
+      .toPromise()
+      .then(resp => resp.json());
+  }
 
 }

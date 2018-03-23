@@ -10,11 +10,13 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { EditorModule } from 'primeng/editor';
 import { DropdownModule } from 'primeng/dropdown'
 import { AccordionModule } from 'primeng/accordion';
+import { CardModule } from 'primeng/card';
 
 import { SharedModule } from '../shared/shared.module';
 
 import { NoticiaCadastroComponent } from './noticia-cadastro/noticia-cadastro.component';
 import { NoticiaPesquisaComponent } from './noticia-pesquisa/noticia-pesquisa.component';
+import { TooltipModule } from 'primeng/tooltip';
 
 @NgModule({
   imports: [
@@ -28,6 +30,8 @@ import { NoticiaPesquisaComponent } from './noticia-pesquisa/noticia-pesquisa.co
     MultiSelectModule,
     DropdownModule,
     AccordionModule,
+    CardModule,
+    TooltipModule,
 
     SharedModule
   ],

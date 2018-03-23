@@ -41,6 +41,7 @@ public class Noticia {
 	private Collection<Topico> topicos = Collections.emptySet();
 
 	@NotBlank
+	@Column(columnDefinition = "text")
 	private String corpo;
 	
 	@NotNull
@@ -48,9 +49,16 @@ public class Noticia {
 	@JoinColumn(name = "grupo_id")
 	private Grupo grupo;
 	
+	@ElementCollection
+	@JoinTable(
+			name = "noticia_hits",
+			joinColumns=@JoinColumn(name = "noticia_id"))
+	@Column(name = "hit", nullable = false)
 	private List<Boolean> informacaoUtil;
 	
 	private boolean publica;
+	
+	private String foto;
 	
 	private Noticia() {}
 
@@ -92,6 +100,9 @@ public class Noticia {
 	}
 	public void setGrupo(Grupo grupo) {
 		this.grupo = grupo;
+	}
+	public String getFoto() {
+		return foto;
 	}
 	
 	@Override

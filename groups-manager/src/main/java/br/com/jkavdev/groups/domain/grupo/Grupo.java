@@ -85,6 +85,9 @@ public class Grupo {
 	public Collection<Integrante> getIntegrantes() {
 		return integrantes;
 	}
+	public Collection<Noticia> getNoticias() {
+		return noticias;
+	}
 	
 	@Override
 	public String toString() {

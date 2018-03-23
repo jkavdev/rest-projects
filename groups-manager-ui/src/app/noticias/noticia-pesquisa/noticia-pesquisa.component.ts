@@ -18,7 +18,7 @@ export class NoticiaPesquisaComponent implements OnInit {
   }
 
   buscar() {
-    this.noticiaService.buscarTodas()
+    this.noticiaService.grupoComNoticas()
       .then(noticias => {this.noticias = noticias; console.log(noticias)});
   }
 
