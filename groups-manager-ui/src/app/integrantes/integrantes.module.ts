@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -13,6 +14,7 @@ import { IntegrantePesquisaComponent } from './integrante-pesquisa/integrante-pe
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule,
     FormsModule,
     BrowserAnimationsModule,
 

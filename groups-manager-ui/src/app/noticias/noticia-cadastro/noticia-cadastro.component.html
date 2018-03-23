@@ -16,8 +16,7 @@
       <div class="ui-g-12 ui-md-3 ui-fluid">
         <label>Exibir notícia a público</label>
         <p-toggleButton name="publica" [(ngModel)]="noticia.publica" pTooltip="{{noticia.publica ? 'Qualquer um terá acesso a esta notícia' : 'Somente integrantes do grupo terão acesso a esta notícia'}}" tooltipPosition="top"
-          onLabel="Sim" offLabel="Não"
-          onIcon="fas fa-eye" offIcon="fas fa-eye-slash"></p-toggleButton>
+          onLabel="Sim" offLabel="Não" onIcon="fas fa-eye" offIcon="fas fa-eye-slash"></p-toggleButton>
       </div>
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Tópicos</label>
@@ -38,7 +37,7 @@
       <div class="ui-g-12">
         <button type="submit" pButton label="Salvar" [disabled]="!noticiaForm.valid"></button>
         <button type="submit" pButton label="Novo" class="ui-button-info"></button>
-        <a href="javascript:;">Voltar para a Pesquisa</a>
+        <a routerLink="/noticias">Voltar para a Pesquisa</a>
       </div>
 
     </div>
