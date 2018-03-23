@@ -6,6 +6,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.core.style.ToStringCreator;
 
@@ -15,17 +17,23 @@ public class Endereco {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	@NotBlank
 	private String rua;
 
+	@NotBlank
 	private String numero;
 	
+	@NotBlank
 	private String bairro;
 
+	@NotBlank
 	private String cidade;
 
+	@NotNull
 	@Enumerated(EnumType.STRING)
 	private UF uf;
 
+	@NotBlank
 	private String cep;
 
 	private String complemento;
