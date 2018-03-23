@@ -1,12 +1,11 @@
 <app-navbar></app-navbar>
-<!-- <app-grupos-pesquisa></app-grupos-pesquisa>
-<app-integrante-pesquisa></app-integrante-pesquisa>
-<app-grupos-cadastro></app-grupos-cadastro>
-<app-evento-cadastro></app-evento-cadastro> -->
-<!-- <app-noticia-cadastro></app-noticia-cadastro> -->
-<app-noticia-pesquisa></app-noticia-pesquisa>
+
+<router-outlet>
+
+</router-outlet>
 
 <ng2-toasty></ng2-toasty>
+
 <p-confirmDialog header="Confirmação" icon="fa fa-question-circle" #confirmacao>
     <p-footer>
         <button type="button" pButton icon="fa-check" label="Sim" (click)="confirmacao.accept()"></button>

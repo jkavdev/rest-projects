@@ -57,6 +57,7 @@ public class Noticia {
 	@Column(name = "hit", nullable = false)
 	private List<Boolean> informacaoUtil = new ArrayList<>();
 	
+	@Column(name = "aberta_ao_publico")
 	private boolean publica;
 	
 	private String foto;
@@ -117,7 +118,8 @@ public class Noticia {
 	public String toString() {
 		return new ToStringCreator(this)
 				.append("id", id)
-				.append("titulo", titulo).toString();
+				.append("titulo", titulo)
+				.append("grupo", grupo.getNome()).toString();
 	}
 	
 }
