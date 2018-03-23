@@ -29,5 +29,12 @@ export class NoticiaService {
       .toPromise()
       .then(resp => resp.json());
   }
+  marcar(util: boolean, id: number): Promise<any> {
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.put(`${this.noticiasUrl}/${id}/marcar`, util, {headers})
+      .toPromise()
+      .then(resp => resp.json());
+  }
 
 }

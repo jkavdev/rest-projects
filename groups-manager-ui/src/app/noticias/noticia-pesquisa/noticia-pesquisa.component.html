@@ -25,8 +25,8 @@
               </div>
               <p-footer>
                 <div class="image-box-footer">
-                  <a pButton icon="far fa-thumbs-up" pTooltip="Marcar como útil" tooltipPosition="top"></a>
-                  <a pButton icon="far fa-thumbs-down" pTooltip="Marcar não como útil" tooltipPosition="top"></a>
+                  <a pButton icon="far fa-thumbs-up" pTooltip="Marcar como útil" tooltipPosition="top" (click)="marcarComoUtil(noticia.id)"></a>
+                  <a pButton icon="far fa-thumbs-down" pTooltip="Marcar não como útil" tooltipPosition="top" (click)="marcarComoNaoUtil(noticia.id)"></a>
                 </div>
               </p-footer>
             </p-accordionTab>

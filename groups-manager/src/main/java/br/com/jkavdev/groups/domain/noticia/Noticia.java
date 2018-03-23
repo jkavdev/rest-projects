@@ -1,5 +1,6 @@
 package br.com.jkavdev.groups.domain.noticia;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -54,13 +55,13 @@ public class Noticia {
 			name = "noticia_hits",
 			joinColumns=@JoinColumn(name = "noticia_id"))
 	@Column(name = "hit", nullable = false)
-	private List<Boolean> informacaoUtil;
+	private List<Boolean> informacaoUtil = new ArrayList<>();
 	
 	private boolean publica;
 	
 	private String foto;
 	
-	private Noticia() {}
+	public Noticia() {}
 
 	public Noticia(String titulo, Collection<Topico> topicos, String corpo, Grupo grupo) {
 		this.titulo = titulo;
@@ -103,6 +104,10 @@ public class Noticia {
 	}
 	public String getFoto() {
 		return foto;
+	}
+	
+	public void adiciona(Boolean util) {
+		this.informacaoUtil.add(util);
 	}
 	
 	@Override
