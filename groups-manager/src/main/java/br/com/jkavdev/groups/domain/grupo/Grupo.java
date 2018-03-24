@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.Collections;
 
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -36,9 +37,9 @@ public class Grupo {
 	
 	@ManyToMany
 	@JoinTable(
-			name = "grupo_integrante",
-			joinColumns=@JoinColumn(name="grupo_id"),
-			inverseJoinColumns=@JoinColumn(name="integrante_id"))
+			name = "grupo_integrante", 
+			joinColumns = @JoinColumn(name = "grupo_id"), foreignKey = @ForeignKey(name = "fk_grupo_id"), 
+			inverseJoinColumns = @JoinColumn(name = "integrante_id"), inverseForeignKey = @ForeignKey(name = "fk_integrante_id"))
 	private Collection<Integrante> integrantes = Collections.emptySet();
 	
 	@OneToMany(mappedBy = "grupo")

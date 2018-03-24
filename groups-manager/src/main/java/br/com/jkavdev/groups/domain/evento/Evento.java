@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -42,12 +43,12 @@ public class Evento {
 	
 	@NotNull
 	@OneToOne(cascade = { CascadeType.ALL })
-	@JoinColumn(name = "endereco_id")
+	@JoinColumn(name = "endereco_id", foreignKey = @ForeignKey(name = "fk_endereco_id"))
 	private Endereco endereco;
 	
 	@NotNull
 	@ManyToOne
-	@JoinColumn(name = "grupo_id")
+	@JoinColumn(name = "grupo_id", foreignKey = @ForeignKey(name = "fk_grupo_id"))
 	private Grupo grupo;
 	
 	private Evento() {}

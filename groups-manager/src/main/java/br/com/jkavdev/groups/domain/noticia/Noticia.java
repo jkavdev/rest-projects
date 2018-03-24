@@ -10,6 +10,7 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -36,7 +37,7 @@ public class Noticia {
 	@ElementCollection
 	@JoinTable(
 			name = "topico_noticia",
-			joinColumns=@JoinColumn(name = "noticia_id"))
+			joinColumns=@JoinColumn(name = "noticia_id"), foreignKey = @ForeignKey(name = "fk_noticia_id"))
 	@Enumerated(EnumType.STRING)
 	@Column(name = "topico", nullable = false)
 	private Set<Topico> topicos = Collections.emptySet();
@@ -47,13 +48,13 @@ public class Noticia {
 	
 	@NotNull
 	@ManyToOne
-	@JoinColumn(name = "grupo_id")
+	@JoinColumn(name = "grupo_id", foreignKey = @ForeignKey(name = "fk_grupo_id"))
 	private Grupo grupo;
 	
 	@ElementCollection
 	@JoinTable(
 			name = "noticia_hits",
-			joinColumns=@JoinColumn(name = "noticia_id"))
+			joinColumns=@JoinColumn(name = "noticia_id"), foreignKey = @ForeignKey(name = "fk_noticia_id"))
 	@Column(name = "hit", nullable = false)
 	private List<Boolean> informacaoUtil = Collections.emptyList();
 	
