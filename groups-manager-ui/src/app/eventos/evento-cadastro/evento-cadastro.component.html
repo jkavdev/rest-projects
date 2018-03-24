@@ -10,7 +10,7 @@
 
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Data do Evento</label>
-        <p-calendar name="data" [(ngModel)]="evento.data" #data="ngModel" required></p-calendar>
+        <p-calendar showTime="true" hourFormat="24" name="data" [(ngModel)]="evento.data" #data="ngModel" required></p-calendar>
         <app-message [control]="data" error="required" text="Informe data do Evento"></app-message>
       </div>
       <div class="ui-g-12 ui-md-6 ui-fluid">
@@ -25,7 +25,7 @@
       </div>
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Lotação Máxima</label>
-        <p-spinner size="100" name="lotacao" [(ngModel)]="evento.lotacao" #lotacao="ngModel" required></p-spinner>
+        <p-spinner size="100" name="lotacao" [(ngModel)]="evento.lotacaoMaxima" #lotacao="ngModel" required></p-spinner>
         <app-message [control]="lotacao" error="required" text="Informe lotação máxima do Evento"></app-message>
       </div>
       <div class="ui-g-12 ui-md-6 ui-fluid">

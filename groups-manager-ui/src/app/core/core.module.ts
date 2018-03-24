@@ -40,7 +40,7 @@ import { EventoService } from '../eventos/evento.service';
     IntegranteService,
     TopicoService,
     NoticiaService,
-    EventoService
+    EventoService,
     { provide: LOCALE_ID, useValue: 'pt-BR' }
   ]
 })

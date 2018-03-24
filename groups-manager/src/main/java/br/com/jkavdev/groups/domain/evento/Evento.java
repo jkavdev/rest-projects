@@ -1,8 +1,9 @@
 package br.com.jkavdev.groups.domain.evento;
 
 import java.math.BigDecimal;
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,13 +26,13 @@ public class Evento {
 	private Long id;
 	
 	@NotNull
-	private LocalTime data;
+	private LocalDateTime data;
 	
 	@NotBlank
 	private String descricao;
 	
 	@NotBlank
-	private String motivo;
+	private String objetivo;
 	
 	private BigDecimal valor;
 	
@@ -40,7 +41,7 @@ public class Evento {
 	private int lotacaoMaxima;
 	
 	@NotNull
-	@OneToOne
+	@OneToOne(cascade = { CascadeType.ALL })
 	@JoinColumn(name = "endereco_id")
 	private Endereco endereco;
 	
@@ -51,11 +52,11 @@ public class Evento {
 	
 	private Evento() {}
 
-	public Evento(LocalTime data, String descricao, String motivo, BigDecimal valor, int lotacaoMaxima,
+	public Evento(LocalDateTime data, String descricao, String motivo, BigDecimal valor, int lotacaoMaxima,
 			Endereco endereco, Grupo grupo) {
 		this.data = data;
 		this.descricao = descricao;
-		this.motivo = motivo;
+		this.objetivo = motivo;
 		this.valor = valor;
 		this.lotacaoMaxima = lotacaoMaxima;
 		this.endereco = endereco;
@@ -64,9 +65,9 @@ public class Evento {
 	
 	public static Evento empty() {
 		Evento empty = new Evento();
-		empty.data = LocalTime.now();
+		empty.data = LocalDateTime.now();
 		empty.descricao = "";
-		empty.motivo = "";
+		empty.objetivo = "";
 		empty.valor = BigDecimal.ZERO;
 		empty.lotacaoMaxima = 0;
 		empty.endereco = Endereco.empty();
@@ -82,6 +83,21 @@ public class Evento {
 	}
 	public void setGrupo(Grupo grupo) {
 		this.grupo = grupo;
+	}
+	public void setObjetivo(String motivo) {
+		this.objetivo = motivo;
+	}
+	public void setData(LocalDateTime data) {
+		this.data = data;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	public void setLotacaoMaxima(int lotacaoMaxima) {
+		this.lotacaoMaxima = lotacaoMaxima;
+	}
+	public void setValor(BigDecimal valor) {
+		this.valor = valor;
 	}
 	
 	@Override
