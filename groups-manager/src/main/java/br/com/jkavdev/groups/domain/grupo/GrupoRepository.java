@@ -13,7 +13,7 @@ public interface GrupoRepository extends JpaRepository<Grupo, Long>, GrupoReposi
 	@Query(nativeQuery = true, value = "SELECT COUNT(g.grupo_id) FROM Grupo_integrante g WHERE g.grupo_id = ?1")
 	Long countByIntegrantesSQL(Long id);
 	
-	@Query("SELECT g FROM Grupo g JOIN FETCH g.noticias")
+	@Query("SELECT g FROM Grupo g JOIN FETCH g.noticias n")
 	List<Grupo> gruposComNoticias();
 
 }

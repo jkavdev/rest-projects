@@ -1,9 +1,9 @@
 package br.com.jkavdev.groups.domain.noticia;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
@@ -39,7 +39,7 @@ public class Noticia {
 			joinColumns=@JoinColumn(name = "noticia_id"))
 	@Enumerated(EnumType.STRING)
 	@Column(name = "topico", nullable = false)
-	private Collection<Topico> topicos = Collections.emptySet();
+	private Set<Topico> topicos = Collections.emptySet();
 
 	@NotBlank
 	@Column(columnDefinition = "text")
@@ -55,7 +55,7 @@ public class Noticia {
 			name = "noticia_hits",
 			joinColumns=@JoinColumn(name = "noticia_id"))
 	@Column(name = "hit", nullable = false)
-	private List<Boolean> informacaoUtil = new ArrayList<>();
+	private List<Boolean> informacaoUtil = Collections.emptyList();
 	
 	@Column(name = "aberta_ao_publico")
 	private boolean publica;
@@ -64,7 +64,7 @@ public class Noticia {
 	
 	public Noticia() {}
 
-	public Noticia(String titulo, Collection<Topico> topicos, String corpo, Grupo grupo) {
+	public Noticia(String titulo, Set<Topico> topicos, String corpo, Grupo grupo) {
 		this.titulo = titulo;
 		this.topicos = topicos;
 		this.corpo = corpo;
@@ -97,7 +97,7 @@ public class Noticia {
 	public Collection<Topico> getTopicos() {
 		return topicos;
 	}
-	public void setTopicos(Collection<Topico> topicos) {
+	public void setTopicos(Set<Topico> topicos) {
 		this.topicos = topicos;
 	}
 	public void setGrupo(Grupo grupo) {

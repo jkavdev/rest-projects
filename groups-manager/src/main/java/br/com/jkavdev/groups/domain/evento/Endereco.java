@@ -18,7 +18,7 @@ public class Endereco {
 	private Long id;
 
 	@NotBlank
-	private String rua;
+	private String logradouro;
 
 	@NotBlank
 	private String numero;
@@ -40,8 +40,8 @@ public class Endereco {
 	
 	private Endereco() {}
 	
-	public Endereco(String rua, String numero, String cidade, UF uf, String cep, String complemento, String bairro) {
-		this.rua = rua;
+	public Endereco(String logradouro, String numero, String cidade, UF uf, String cep, String complemento, String bairro) {
+		this.logradouro = logradouro;
 		this.numero = numero;
 		this.cidade = cidade;
 		this.uf = uf;
@@ -52,7 +52,7 @@ public class Endereco {
 	
 	public static Endereco empty() {
 		Endereco empty = new Endereco();
-		empty.rua = "";
+		empty.logradouro = "";
 		empty.numero = "";
 		empty.cidade = "";
 		empty.uf = UF.NONE;
@@ -91,7 +91,7 @@ public class Endereco {
 	public String toString() {
 		return new ToStringCreator(this)
 				.append("id", id)
-				.append("rua", rua)
+				.append("logradouro", logradouro)
 				.append("numero", numero)
 				.append("bairro", bairro)
 				.append("cidade", cidade)
