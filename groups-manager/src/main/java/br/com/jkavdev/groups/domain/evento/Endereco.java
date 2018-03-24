@@ -21,13 +21,13 @@ public class Endereco {
 	private String logradouro;
 
 	@NotBlank
-	private String numero;
+	private String unidade;
+	
+	@NotBlank
+	private String localidade;
 	
 	@NotBlank
 	private String bairro;
-
-	@NotBlank
-	private String cidade;
 
 	@NotNull
 	@Enumerated(EnumType.STRING)
@@ -40,26 +40,47 @@ public class Endereco {
 	
 	private Endereco() {}
 	
-	public Endereco(String logradouro, String numero, String cidade, UF uf, String cep, String complemento, String bairro) {
+	public Endereco(String logradouro, String numero, String localidade,String unidade, UF uf, String cep, String bairro) {
 		this.logradouro = logradouro;
-		this.numero = numero;
-		this.cidade = cidade;
+		this.localidade = localidade;
+		this.unidade = unidade;
 		this.uf = uf;
 		this.cep = cep;
-		this.complemento = complemento;
 		this.bairro = bairro;
 	}
 	
 	public static Endereco empty() {
 		Endereco empty = new Endereco();
 		empty.logradouro = "";
-		empty.numero = "";
-		empty.cidade = "";
+		empty.localidade = "";
+		empty.unidade = "";
 		empty.uf = UF.NONE;
 		empty.cep = "";
 		empty.complemento = "";
 		empty.bairro = "";
 		return empty;
+	}
+	
+	public void setLogradouro(String logradouro) {
+		this.logradouro = logradouro;
+	}
+	public void setUnidade(String unidade) {
+		this.unidade = unidade;
+	}
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+	public void setLocalidade(String localidade) {
+		this.localidade = localidade;
+	}
+	public void setUf(UF uf) {
+		this.uf = uf;
+	}
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
 	}
 
 	@Override
@@ -92,9 +113,9 @@ public class Endereco {
 		return new ToStringCreator(this)
 				.append("id", id)
 				.append("logradouro", logradouro)
-				.append("numero", numero)
+				.append("unidade", unidade)
 				.append("bairro", bairro)
-				.append("cidade", cidade)
+				.append("localidade", localidade)
 				.append("uf", uf)
 				.append("cep", cep)
 				.append("complemento", complemento).toString();

@@ -77,6 +77,12 @@ public class Evento {
 	public Long getId() {
 		return id;
 	}
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+	public void setGrupo(Grupo grupo) {
+		this.grupo = grupo;
+	}
 	
 	@Override
 	public String toString() {

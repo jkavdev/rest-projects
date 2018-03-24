@@ -12,16 +12,19 @@ export class Noticia {
 }
 
 export class Endereco {
-    logradouro: string;
     cep: string;
+    logradouro: string;
     complemento: string;
     bairro: string;
-    uf: string;
     localidade: string;
+    uf: string;
+    unidade: string;
+    ibge: string;
+    gia: string;
 }
 
 export class Evento {
-    data: Date;
+    data: any;
     descricao: string;
     motivo: string;
     valor: string;

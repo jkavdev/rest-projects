@@ -48,7 +48,9 @@ public class Grupo {
 	private Collection<Noticia> noticias = Collections.emptySet();
 	
 	private Grupo() {}
-	
+	public Grupo(Long id) {
+		this.id = id;
+	}
 	public Grupo(Long id, String nome, String objetivo, String igreja) {
 		this.id = id;
 		this.nome = nome;
@@ -66,6 +68,9 @@ public class Grupo {
 	
 	public Long getId() {
 		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public String getNome() {
 		return nome;

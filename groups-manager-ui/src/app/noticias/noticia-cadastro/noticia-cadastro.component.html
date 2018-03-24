@@ -25,7 +25,7 @@
       </div>
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Grupo</label>
-        <p-dropdown [autoWidth]="false" [options]="grupos" placeholder="Selecione" name="grupo" [(ngModel)]="noticia.grupo" #grupo="ngModel"></p-dropdown>
+        <p-dropdown [autoWidth]="false" [options]="grupos" placeholder="Selecione" name="grupo" [(ngModel)]="noticia.grupo.id" #grupo="ngModel"></p-dropdown>
         <app-message [control]="grupo" error="required" text="Informe o grupo da notícia"></app-message>
       </div>
       <div class="ui-g-12 ui-fluid">

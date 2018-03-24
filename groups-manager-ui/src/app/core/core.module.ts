@@ -14,6 +14,7 @@ import { GrupoService } from '../grupos/grupo.service';
 import { IntegranteService } from '../integrantes/integrante.service';
 import { TopicoService } from '../topicos/topico.service';
 import { NoticiaService } from '../noticias/noticia.service';
+import { EventoService } from '../eventos/evento.service';
 
 @NgModule({
   imports: [
@@ -39,6 +40,7 @@ import { NoticiaService } from '../noticias/noticia.service';
     IntegranteService,
     TopicoService,
     NoticiaService,
+    EventoService
     { provide: LOCALE_ID, useValue: 'pt-BR' }
   ]
 })
