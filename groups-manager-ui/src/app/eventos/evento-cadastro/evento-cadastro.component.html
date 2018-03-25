@@ -20,7 +20,7 @@
       </div>
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Valor do Evento</label>
-        <input type="text" name="valor" [(ngModel)]="evento.descricao" pInputText currencyMask placeholder="0,00" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', allowNegative: false}" />
+        <input type="text" name="valor" [(ngModel)]="evento.valor" pInputText currencyMask placeholder="0,00" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', allowNegative: false}" />
       </div>
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Lotação Máxima</label>
@@ -29,7 +29,7 @@
       </div>
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Grupo</label>
-        <p-dropdown [autoWidth]="false" [options]="grupos" name="grupo" [(ngModel)]="evento.grupo" #grupo="ngModel" required></p-dropdown>
+        <p-dropdown [autoWidth]="false" [options]="grupos" name="grupo" [(ngModel)]="evento.grupo" #grupo="ngModel" required placeholder="Selecione"></p-dropdown>
         <app-message [control]="grupo" error="required" text="Informe o Grupo"></app-message>
       </div>
       <div class="ui-g-12 ui-fluid">
@@ -69,7 +69,7 @@
       </div>
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>UF</label>
-        <p-dropdown [autoWidth]="false" [options]="ufs" name="uf" [(ngModel)]="evento.endereco.uf" #uf="ngModel" required></p-dropdown>
+        <p-dropdown [autoWidth]="false" [options]="ufs" name="uf" [(ngModel)]="evento.endereco.uf" #uf="ngModel" required placeholder="Selecione"></p-dropdown>
         <app-message [control]="uf" error="required" text="Informe o estado do Evento"></app-message>
       </div>
       <div class="ui-g-12 ui-fluid">

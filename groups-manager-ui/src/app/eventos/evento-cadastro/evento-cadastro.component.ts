@@ -16,8 +16,8 @@ import { EventoService } from '../evento.service';
 })
 export class EventoCadastroComponent implements OnInit {
 
-  grupos: SelectItem[];
-  ufs: SelectItem[];
+  grupos = [];
+  ufs = [];
   endereco: Endereco;
   evento = new Evento();
 
@@ -29,12 +29,10 @@ export class EventoCadastroComponent implements OnInit {
 
   ngOnInit() {
     this.grupos = [
-      { label: 'Selecione o Grupo', value: null },
       { label: 'GAM', value: 1 },
       { label: 'Movimento', value: 2 }
     ]
     this.ufs = [
-      { label: 'Selecione o Estado', value: null },
       { label: 'GO', value: 1 },
       { label: 'DF', value: 2 }
     ]
