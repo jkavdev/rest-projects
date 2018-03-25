@@ -20,8 +20,7 @@
       </div>
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Valor do Evento</label>
-        <input type="text" name="valor" [(ngModel)]="evento.descricao" pInputText currencyMask placeholder="0,00" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', allowNegative: false}"
-        />
+        <input type="text" name="valor" [(ngModel)]="evento.descricao" pInputText currencyMask placeholder="0,00" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', allowNegative: false}" />
       </div>
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>Lotação Máxima</label>
@@ -43,7 +42,12 @@
         <h2>Endereço do Evento</h2>
       </div>
 
-      <div class="ui-g-12 ui-md-6 ui-fluid">
+      <div class="ui-g-12 ui-md-2 ui-fluid">
+        <label>CEP</label>
+        <p-inputMask (onComplete)="buscarEndereco(cep.value)" mask="99.999-999" name="cep" [(ngModel)]="evento.endereco.cep" #cep="ngModel" required></p-inputMask>
+        <app-message [control]="cep" error="required" text="Informe o CEP do Evento"></app-message>
+      </div>
+      <div class="ui-g-12 ui-md-10 ui-fluid">
         <label>Logradouro</label>
         <input type="text" pInputText name="logradouro" [(ngModel)]="evento.endereco.logradouro" #rua="ngModel" required/>
         <app-message [control]="rua" error="required" text="Informe a rua do Evento"></app-message>
@@ -62,11 +66,6 @@
         <label>Cidade</label>
         <input type="text" pInputText name="cidade" [(ngModel)]="evento.endereco.localidade" #cidade="ngModel" required/>
         <app-message [control]="cidade" error="required" text="Informe a cidade do Evento"></app-message>
-      </div>
-      <div class="ui-g-12 ui-md-6 ui-fluid">
-        <label>CEP</label>
-        <p-inputMask mask="99.999-999" name="cep" [(ngModel)]="evento.endereco.cep" #cep="ngModel" required></p-inputMask>
-        <app-message [control]="cep" error="required" text="Informe o CEP do Evento"></app-message>
       </div>
       <div class="ui-g-12 ui-md-6 ui-fluid">
         <label>UF</label>

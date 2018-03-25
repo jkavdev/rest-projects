@@ -19,8 +19,6 @@ export class Endereco {
     localidade: string;
     uf: string;
     unidade: string;
-    ibge: string;
-    gia: string;
 }
 
 export class Evento {
