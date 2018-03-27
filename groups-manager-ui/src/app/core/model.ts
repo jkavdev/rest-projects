@@ -33,3 +33,17 @@ export class Evento {
     endereco = new Endereco();
     grupo = new Grupo();
 }
+
+export class Integrante {
+    nome: string;
+    celular: string;
+    email: string;
+    senha: string;
+    sexo: string;
+    dataNascimento: Date;
+    cpf: string;
+    membroOutraIgreja: boolean;
+    membroDaIgreja: boolean;
+    nomeDaOutraIgreja: string;
+    cadastroEfetivado: boolean;
+}

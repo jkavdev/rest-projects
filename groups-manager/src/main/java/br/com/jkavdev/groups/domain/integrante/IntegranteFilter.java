@@ -1,9 +1,13 @@
 package br.com.jkavdev.groups.domain.integrante;
 
+import org.hibernate.validator.constraints.br.CPF;
+
 public class IntegranteFilter {
 	
 	private String nome;
 	private String grupo;
+	@CPF
+	private String cpf;
 	
 	public String getNome() {
 		return nome;
@@ -17,10 +21,16 @@ public class IntegranteFilter {
 	public void setGrupo(String grupo) {
 		this.grupo = grupo;
 	}
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
 	
 	@Override
 	public String toString() {
-		return "IntegranteFilter [nome=" + nome + ", grupo=" + grupo + "]";
+		return "IntegranteFilter [nome=" + nome + ", grupo=" + grupo + ", cpf=" + cpf + "]";
 	}
-
+	
 }

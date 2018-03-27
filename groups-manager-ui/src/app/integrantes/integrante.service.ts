@@ -36,4 +36,10 @@ export class IntegranteService {
       .then(resp => resp.json());
   }
 
+  validar(cpf: string) {
+    return this.http.post(`${this.integrantesUrl}/validarcpf`, {"cpf": `${cpf}`})
+      .toPromise()
+      .then();
+  }
+
 }

@@ -8,8 +8,14 @@ import { DataTableModule } from 'primeng/datatable';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { TooltipModule } from 'primeng/tooltip';
+import { InputMaskModule } from 'primeng/inputmask';
+import { SelectButtonModule } from 'primeng/selectbutton';
+
+import { SharedModule } from '../shared/shared.module';
 
 import { IntegrantePesquisaComponent } from './integrante-pesquisa/integrante-pesquisa.component';
+import { IntegranteCadastroComponent } from './integrante-cadastro/integrante-cadastro.component';
+import { CalendarModule } from 'primeng/calendar';
 
 @NgModule({
   imports: [
@@ -21,13 +27,20 @@ import { IntegrantePesquisaComponent } from './integrante-pesquisa/integrante-pe
     ButtonModule,
     DataTableModule,
     InputTextModule,
-    TooltipModule
+    TooltipModule,
+    InputMaskModule,
+    SelectButtonModule,
+    CalendarModule,
+
+    SharedModule
   ],
   declarations: [
-    IntegrantePesquisaComponent
+    IntegrantePesquisaComponent,
+    IntegranteCadastroComponent
   ],
   exports: [
-    IntegrantePesquisaComponent
+    IntegrantePesquisaComponent,
+    IntegranteCadastroComponent
   ]
 })
 export class IntegrantesModule { }

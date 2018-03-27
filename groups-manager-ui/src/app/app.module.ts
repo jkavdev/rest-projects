@@ -16,13 +16,15 @@ import { GruposPesquisaComponent } from './grupos/grupos-pesquisa/grupos-pesquis
 import { GruposCadastroComponent } from './grupos/grupos-cadastro/grupos-cadastro.component';
 import { IntegrantePesquisaComponent } from './integrantes/integrante-pesquisa/integrante-pesquisa.component';
 import { EventoCadastroComponent } from './eventos/evento-cadastro/evento-cadastro.component';
+import { EventoPesquisaComponent } from './eventos/evento-pesquisa/evento-pesquisa.component';
+import { IntegranteCadastroComponent } from './integrantes/integrante-cadastro/integrante-cadastro.component';
 
 const routes: Routes = [
   { path: 'grupos', component: GruposPesquisaComponent },
   { path: 'grupos/novo', component: GruposCadastroComponent },
   { path: 'integrantes', component: IntegrantePesquisaComponent },
-  { path: 'integrantes/novo', component: IntegrantePesquisaComponent },
-  { path: 'eventos', component: EventoCadastroComponent },
+  { path: 'integrantes/novo', component: IntegranteCadastroComponent },
+  { path: 'eventos', component: EventoPesquisaComponent },
   { path: 'eventos/novo', component: EventoCadastroComponent },
   { path: 'noticias', component: NoticiaPesquisaComponent },
   { path: 'noticias/nova', component: NoticiaCadastroComponent },

@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.br.CPF;
+
 @Entity
 public class Integrante {
 	
@@ -30,6 +32,7 @@ public class Integrante {
 	@Column(name = "data_nascimento")
 	private LocalDate dataNascimento;
 	
+	@CPF
 	private String cpf;
 	
 	@Column(name = "membro_da_igreja")
