@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, URLSearchParams } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
+import { Grupo } from '../core/model';
 
 export class GrupoFiltro {
   nome: string;
@@ -30,6 +31,12 @@ export class GrupoService {
     return this.http.delete(`${this.gruposUrl}/${codigo}`)
       .toPromise()
       .then(() => null)
+  }
+
+  salvar(grupo: Grupo): Promise<any> {
+    return this.http.post(`${this.gruposUrl}`, grupo)
+      .toPromise()
+      .then(resp => resp.json());
   }
 
 }

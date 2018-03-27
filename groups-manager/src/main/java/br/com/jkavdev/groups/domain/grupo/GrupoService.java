@@ -1,5 +1,7 @@
 package br.com.jkavdev.groups.domain.grupo;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,14 @@ public class GrupoService {
 		}
 
 		grupoRepository.deleteById(id);
+	}
+
+	public List<Grupo> filtrar(GrupoFilter filter) {
+		return grupoRepository.filtrar(filter);
+	}
+
+	public Grupo salvar(Grupo grupo) {
+		return grupoRepository.save(grupo);
 	}
 
 }
