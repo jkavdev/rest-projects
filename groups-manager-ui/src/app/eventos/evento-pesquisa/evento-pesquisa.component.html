@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="ui-g">
+
+        <form autocomplete="off" (ngSubmit)="pesquisar()">
+
+            <div class="ui-g-12">
+                <h1>Eventos</h1>
+            </div>
+
+            <div class="ui-g-12">
+                <p-calendar showTime="true" hourFormat="24" name="de" [(ngModel)]="eventoFiltro.de" #de="ngModel" placeholder="Data início do evento"></p-calendar>
+                
+                <label>até</label>
+                <p-calendar showTime="true" hourFormat="24" name="ate" [(ngModel)]="eventoFiltro.ate" #de="ngModel" placeholder="Data fim do evento"></p-calendar>
+            </div>
+
+            <div class="ui-g-12">
+                <button pButton type="submit" label="Pesquisar"></button>
+            </div>
+
+        </form>
+    </div>
+
+</div>

@@ -13,10 +13,12 @@ import { DropdownModule } from 'primeng/dropdown';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
+import { ScheduleModule } from 'primeng/schedule';
 
 import { SharedModule } from '../shared/shared.module';
 
 import { EventoCadastroComponent } from './evento-cadastro/evento-cadastro.component';
+import { EventoPesquisaComponent } from './evento-pesquisa/evento-pesquisa.component';
 
 @NgModule({
   imports: [
@@ -34,11 +36,13 @@ import { EventoCadastroComponent } from './evento-cadastro/evento-cadastro.compo
     SpinnerModule,
     DropdownModule,
     InputMaskModule,
+    ScheduleModule,
 
     SharedModule
   ],
   declarations: [
-    EventoCadastroComponent
+    EventoCadastroComponent,
+    EventoPesquisaComponent
   ],
   exports: [
     EventoCadastroComponent

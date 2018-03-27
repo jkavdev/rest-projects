@@ -6,6 +6,8 @@ import 'rxjs/add/operator/toPromise';
 export class IntegranteFiltro {
   nome: string;
   grupo: string;
+  de: Date;
+  ate: Date;
 }
 
 @Injectable()
