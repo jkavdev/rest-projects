@@ -25,8 +25,6 @@ import br.com.jkavdev.groups.utils.ServiceMap;
 
 @RestController
 @RequestMapping("/integrantes")
-//necessario para realizar a validacao de parametros recebidos pela url
-@Validated
 public class IntegranteController  implements ServiceMap {
 
 	@Autowired
@@ -62,6 +60,8 @@ public class IntegranteController  implements ServiceMap {
 	public void validarCpf(@Valid @RequestBody IntegranteFilter filter) {
 		System.out.println(filter.getCpf() + " eh valido");
 	}
+//	necessario para realizar a validacao de parametros recebidos pela url
+	@Validated
 	@GetMapping("{cpf}/validar")
 	@ResponseStatus(HttpStatus.OK)
 	public void validarCpf(@CPF @PathVariable String cpf) {
