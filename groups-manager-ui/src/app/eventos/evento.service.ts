@@ -18,18 +18,35 @@ export class EventoService {
   }
 
   pesquisar(filtro: EventoFiltro): Promise<any> {
-    const params = new URLSearchParams();
-
-    if (filtro.de) {
-      params.set('de', JSON.stringify(filtro.de));
+    let params = {
+      'de': '',
+      'ate': '',
     }
-    if (filtro.ate) {
-      params.set('ate', JSON.stringify(filtro.ate));
+    if (filtro.de && filtro.ate) {
+    params = {
+      'de': filtro.de.toISOString(),
+      'ate': filtro.ate.toISOString(),
     }
+  }
 
-    return this.http.get(`${this.eventosUrl}?pesquisa`, { search: filtro })
+    // if (filtro.de) {
+    //   params.de = filtro.de
+    // }
+    // if (filtro.ate) {
+    //   params.ate = filtro.ate.toString()
+    // }
+
+    // console.log(filtro)
+    // console.log(filtro.ate)
+    // console.log(filtro.de)
+    // filtro.de = new Date();
+    // filtro.ate = new Date();
+
+console.log(params)
+
+    return this.http.get(`${this.eventosUrl}?pesquisa`, { search: params })
       .toPromise()
-      .then(resp => resp.json());
+      .then(resp => resp.json()); 
   }
 
 }
