@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { SelectItem } from 'primeng/api';
 import { Dropdown } from 'primeng/dropdown';
@@ -24,7 +25,8 @@ export class EventoCadastroComponent implements OnInit {
   constructor(
     private viacepService: ViacepService,
     private eventoService: EventoService,
-    private toasty: ToastyService
+    private toasty: ToastyService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -59,6 +61,23 @@ export class EventoCadastroComponent implements OnInit {
 
         this.toasty.success('Endereço encontrado no ViaCep');
       })
+  }
+
+  limpar(form: FormControl) {
+    form.reset();
+
+    /**
+     * nao eh necessario
+     * mas deve ser feitos mais testes
+     * na versao que foi testado
+     * o angular executa o reset depois do new Evento
+     */
+    // setTimeout(function(){
+    //   this.evento = new Evento();
+    // }.bind(this.evento), 1);
+
+    this.evento = new Evento();
+    this.router.navigate(['/eventos/novo'])
   }
 
 }

@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Integrante } from '../../core/model';
-import { SelectItem } from 'primeng/api';
+import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
-import { IntegranteService } from '../integrante.service';
+
+import { SelectItem } from 'primeng/api';
 import { ToastyService } from 'ng2-toasty';
+
+import { IntegranteService } from '../integrante.service';
+import { Integrante } from '../../core/model';
 import { ErrorHandlerService } from '../../core/error-handler.service';
 
 @Component({
@@ -19,7 +22,8 @@ export class IntegranteCadastroComponent implements OnInit {
   constructor(
     private integranteService: IntegranteService,
     private toasty: ToastyService,
-    private errorHandler: ErrorHandlerService
+    private errorHandler: ErrorHandlerService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -39,6 +43,13 @@ export class IntegranteCadastroComponent implements OnInit {
         this.toasty.success(`${cpf} válido`)
       })
       .catch(erro => this.errorHandler.handle(erro));
+  }
+
+  limpar(form: FormControl) {
+    form.reset();
+
+    this.integrante = new Integrante();
+    this.router.navigate(['/integrantes/novo'])
   }
 
 }

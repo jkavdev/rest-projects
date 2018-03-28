@@ -79,8 +79,8 @@
 
       <div class="ui-g-12">
         <button type="submit" pButton label="Salvar" [disabled]="!eventoForm.valid"></button>
-        <button type="submit" pButton label="Novo" class="ui-button-info"></button>
-        <a href="javascript:;">Voltar para a Pesquisa</a>
+        <a pButton label="Limpar" (click)="limpar(eventoForm)"></a>
+        <a routerLink="/eventos">Voltar para a Pesquisa</a>
       </div>
 
     </div>

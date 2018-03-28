@@ -41,6 +41,7 @@
 
       <div class="ui-g-12">
         <button type="submit" pButton label="Salvar" [disabled]="integranteForm.invalid"></button>
+        <a pButton label="Limpar" (click)="limpar(integranteForm)"></a>
         <a routerLink="/integrantes">Voltar para a Pesquisa</a>
       </div>
 

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Form, FormControl } from '@angular/forms';
-import { GrupoService } from '../grupo.service';
+import { Router } from '@angular/router';
+
 import { ToastyService } from 'ng2-toasty';
+
+import { GrupoService } from '../grupo.service';
 import { ErrorHandlerService } from '../../core/error-handler.service';
 import { Grupo } from '../../core/model';
 
@@ -17,7 +20,8 @@ export class GruposCadastroComponent implements OnInit {
   constructor(
     private grupoService: GrupoService,
     private toasty: ToastyService,
-    private errorHandler: ErrorHandlerService
+    private errorHandler: ErrorHandlerService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -32,6 +36,13 @@ export class GruposCadastroComponent implements OnInit {
         this.grupo = new Grupo();
       })
       .catch(erro => this.errorHandler.handle(erro));
+  }
+
+  limpar(form: FormControl) {
+    form.reset();
+
+    this.grupo = new Grupo();
+    this.router.navigate(['/grupos/novo'])
   }
 
 }

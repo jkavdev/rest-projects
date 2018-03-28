@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { SelectItem } from 'primeng/api';
+import { ToastyService } from 'ng2-toasty';
 
 import { TopicoService } from '../../topicos/topico.service';
 import { ErrorHandlerService } from '../../core/error-handler.service';
 import { Noticia } from '../../core/model';
 import { NoticiaService } from '../noticia.service';
-import { ToastyService } from 'ng2-toasty';
 
 @Component({
   selector: 'app-noticia-cadastro',
@@ -26,7 +27,8 @@ export class NoticiaCadastroComponent implements OnInit {
     private topicoService: TopicoService,
     private errorHandler: ErrorHandlerService,
     private toasty: ToastyService,
-    private noticiaService: NoticiaService
+    private noticiaService: NoticiaService,
+    private router: Router
   ) {
   }
 
@@ -55,6 +57,13 @@ export class NoticiaCadastroComponent implements OnInit {
         this.topicos = topicos.map(t => ({ label: t.descricao, value: t.topico }));
       })
       .catch(erro => this.errorHandler.handle(erro));
+  }
+
+  limpar(form: FormControl) {
+    form.reset();
+
+    this.noticia = new Noticia();
+    this.router.navigate(['/noticias/nova'])
   }
 
 }

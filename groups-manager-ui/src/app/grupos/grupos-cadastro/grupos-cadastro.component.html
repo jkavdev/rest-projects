@@ -28,6 +28,7 @@
 
       <div class="ui-g-12">
         <button type="submit" pButton label="Salvar" [disabled]="grupoForm.invalid"></button>
+        <a pButton label="Limpar" (click)="limpar(grupoForm)"></a>
         <a routerLink="/grupos">Voltar para a Pesquisa</a>
       </div>
 

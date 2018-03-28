@@ -36,7 +36,7 @@
 
       <div class="ui-g-12">
         <button type="submit" pButton label="Salvar" [disabled]="!noticiaForm.valid"></button>
-        <button type="submit" pButton label="Novo" class="ui-button-info"></button>
+        <a pButton label="Limpar" (click)="limpar(noticiaForm)"></a>
         <a routerLink="/noticias">Voltar para a Pesquisa</a>
       </div>
 
