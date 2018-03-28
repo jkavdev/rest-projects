@@ -19,28 +19,28 @@ import { EventoCadastroComponent } from './eventos/evento-cadastro/evento-cadast
 import { EventoPesquisaComponent } from './eventos/evento-pesquisa/evento-pesquisa.component';
 import { IntegranteCadastroComponent } from './integrantes/integrante-cadastro/integrante-cadastro.component';
 import { PaginaNaoEncontradaComponent } from './core/pagina-nao-encontrada.component';
-import { GroupsRoutingModule } from './groups-routing.module';
+
+const routes: Routes = [
+  { path: '', redirectTo:'eventos', pathMatch: 'full' },
+  { path: 'grupos', component: GruposPesquisaComponent },
+  { path: 'grupos/novo', component: GruposCadastroComponent },
+  { path: 'integrantes', component: IntegrantePesquisaComponent },
+  { path: 'integrantes/novo', component: IntegranteCadastroComponent },
+  { path: 'eventos', component: EventoPesquisaComponent },
+  { path: 'eventos/novo', component: EventoCadastroComponent },
+  { path: 'noticias', component: NoticiaPesquisaComponent },
+  { path: 'noticias/nova', component: NoticiaCadastroComponent },
+  { path: 'pagina-nao-encontrada', component: PaginaNaoEncontradaComponent },
+  { path: '**', redirectTo: 'pagina-nao-encontrada' },
+];
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    GroupsRoutingModule,
-
-    CoreModule,
-    EventosModule,
-    GruposModule,
-    IntegrantesModule,
-    NoticiasModule
+    RouterModule.forRoot(routes),
   ],
   providers: [],
-  bootstrap: [AppComponent],
   exports: [
-    
+    RouterModule
   ]
 })
-export class AppModule { }
+export class GroupsRoutingModule { }
