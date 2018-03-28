@@ -42,9 +42,6 @@ import { NoticiaPesquisaComponent } from './noticia-pesquisa/noticia-pesquisa.co
   declarations: [
     NoticiaCadastroComponent,
     NoticiaPesquisaComponent
-  ], exports: [
-    NoticiaCadastroComponent,
-    NoticiaPesquisaComponent
-  ]
+  ], exports: []
 })
 export class NoticiasModule { }

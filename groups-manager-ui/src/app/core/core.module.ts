@@ -15,6 +15,7 @@ import { IntegranteService } from '../integrantes/integrante.service';
 import { TopicoService } from '../topicos/topico.service';
 import { NoticiaService } from '../noticias/noticia.service';
 import { EventoService } from '../eventos/evento.service';
+import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import { EventoService } from '../eventos/evento.service';
     ViacepModule
   ],
   declarations: [
-    NavbarComponent
+    NavbarComponent,
+    PaginaNaoEncontradaComponent
   ],
   exports: [
     NavbarComponent,

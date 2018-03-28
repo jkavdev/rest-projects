@@ -44,8 +44,6 @@ import { EventoPesquisaComponent } from './evento-pesquisa/evento-pesquisa.compo
     EventoCadastroComponent,
     EventoPesquisaComponent
   ],
-  exports: [
-    EventoCadastroComponent
-  ]
+  exports: []
 })
 export class EventosModule { }

@@ -38,9 +38,6 @@ import { CalendarModule } from 'primeng/calendar';
     IntegrantePesquisaComponent,
     IntegranteCadastroComponent
   ],
-  exports: [
-    IntegrantePesquisaComponent,
-    IntegranteCadastroComponent
-  ]
+  exports: []
 })
 export class IntegrantesModule { }

@@ -34,9 +34,6 @@ import { GruposPesquisaComponent } from './grupos-pesquisa/grupos-pesquisa.compo
     GruposCadastroComponent,
     GruposPesquisaComponent
   ],
-  exports: [
-    GruposCadastroComponent,
-    GruposPesquisaComponent
-  ]
+  exports: []
 })
 export class GruposModule { }
