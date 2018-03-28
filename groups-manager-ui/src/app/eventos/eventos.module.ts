@@ -14,6 +14,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { ScheduleModule } from 'primeng/schedule';
+import { PanelModule} from 'primeng/panel';
 
 import { SharedModule } from '../shared/shared.module';
 
@@ -37,6 +38,8 @@ import { EventoPesquisaComponent } from './evento-pesquisa/evento-pesquisa.compo
     DropdownModule,
     InputMaskModule,
     ScheduleModule,
+    PanelModule,
+    
 
     SharedModule
   ],
