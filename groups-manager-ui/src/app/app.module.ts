@@ -20,6 +20,7 @@ import { EventoPesquisaComponent } from './eventos/evento-pesquisa/evento-pesqui
 import { IntegranteCadastroComponent } from './integrantes/integrante-cadastro/integrante-cadastro.component';
 
 const routes: Routes = [
+  { path: '', redirectTo:'eventos', pathMatch: 'full' },
   { path: 'grupos', component: GruposPesquisaComponent },
   { path: 'grupos/novo', component: GruposCadastroComponent },
   { path: 'integrantes', component: IntegrantePesquisaComponent },
