@@ -32,13 +32,16 @@
         <div *ngFor="let evento of eventos" class="ui-g-12">
 
             <div class="ui-g-12">
-                <div class="ui-g-12 ui-md-4">
+                <div class="ui-g-12 ui-md-4" style="text-align: center;">
                     <img src="assets/images/icon-evento.png" style="width: 210px;">
                 </div>
                 <div class="ui-g-12 ui-md-8">
-                    <div class="ui-g-12">{{evento.descricao}}</div>
-                    <div class="ui-g-12">{{evento.data | date:'HH:mm dd/MM/yyyy'}}</div>
-                    <div class="ui-g-12">{{evento.grupo.nome}}</div>
+                    <h3>
+                        <span>{{evento.descricao}}</span>
+                        <br />
+                        <small>{{evento.data | date:'HH:mm dd/MM/yyyy'}}</small>
+                    </h3>
+                    <p>{{evento.objetivo}}</p>
                 </div>
             </div>
         </div>

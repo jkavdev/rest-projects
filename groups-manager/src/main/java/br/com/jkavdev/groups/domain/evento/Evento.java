@@ -33,6 +33,7 @@ public class Evento {
 	private String descricao;
 	
 	@NotBlank
+	@Column(columnDefinition = "text")
 	private String objetivo;
 	
 	private BigDecimal valor;
