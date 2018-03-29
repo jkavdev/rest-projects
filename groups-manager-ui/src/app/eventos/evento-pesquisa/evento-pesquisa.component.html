@@ -29,32 +29,18 @@
 
             </form>
         </div>
-        <div class="ui-g-12">
-            <p-carousel headerText="Cars" [value]="eventos">
-                <ng-template let-evento pTemplate="item">
-                    <div class="ui-grid ui-grid-responsive">
-                        <div class="ui-grid-row">
-                            <div class="ui-grid-col-12">
-                                <img src="assets/images/icon-evento.png" width="60">
-                            </div>
-                        </div>
-                        <div class="ui-grid-row">
-                            <div class="ui-grid-col-12">{{evento.descricao}}</div>
-                        </div>
-                        <div class="ui-grid-row">
-                            <div class="ui-grid-col-12">{{evento.data | date:'HH:mm dd/MM/yyyy'}}</div>
-                        </div>
-                        <div class="ui-grid-row">
-                            <div class="ui-grid-col-12">{{evento.grupo.nome}}</div>
-                        </div>
-                        <div class="ui-grid-row">
-                            <div class="ui-grid-col-12">
-                                <button type="button" pButton icon="fa-search"></button>
-                            </div>
-                        </div>
-                    </div>
-                </ng-template>
-            </p-carousel>
+        <div *ngFor="let evento of eventos" class="ui-g-12">
+
+            <div class="ui-g-12">
+                <div class="ui-g-12 ui-md-4">
+                    <img src="assets/images/icon-evento.png" style="width: 210px;">
+                </div>
+                <div class="ui-g-12 ui-md-8">
+                    <div class="ui-g-12">{{evento.descricao}}</div>
+                    <div class="ui-g-12">{{evento.data | date:'HH:mm dd/MM/yyyy'}}</div>
+                    <div class="ui-g-12">{{evento.grupo.nome}}</div>
+                </div>
+            </div>
         </div>
     </div>
 
