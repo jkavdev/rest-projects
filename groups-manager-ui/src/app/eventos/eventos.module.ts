@@ -14,7 +14,10 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { ScheduleModule } from 'primeng/schedule';
-import { PanelModule} from 'primeng/panel';
+import { PanelModule } from 'primeng/panel';
+import { CardModule } from 'primeng/card';
+import { TableModule } from 'primeng/table';
+import { CarouselModule } from 'primeng/carousel';
 
 import { SharedModule } from '../shared/shared.module';
 
@@ -39,7 +42,10 @@ import { EventoPesquisaComponent } from './evento-pesquisa/evento-pesquisa.compo
     InputMaskModule,
     ScheduleModule,
     PanelModule,
-    
+    CardModule,
+    TableModule,
+    CarouselModule,
+
 
     SharedModule
   ],

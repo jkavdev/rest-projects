@@ -25,7 +25,7 @@ export class Endereco {
 }
 
 export class Evento {
-    data: any;
+    data: Date;
     descricao: string;
     motivo: string;
     valor: string;

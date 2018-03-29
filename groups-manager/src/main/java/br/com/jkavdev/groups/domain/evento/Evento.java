@@ -51,7 +51,7 @@ public class Evento {
 	@JoinColumn(name = "grupo_id", foreignKey = @ForeignKey(name = "fk_grupo_id"))
 	private Grupo grupo;
 	
-	private Evento() {}
+	public Evento() {}
 
 	public Evento(LocalDateTime data, String descricao, String motivo, BigDecimal valor, int lotacaoMaxima,
 			Endereco endereco, Grupo grupo) {
@@ -78,6 +78,27 @@ public class Evento {
 	
 	public Long getId() {
 		return id;
+	}
+	public LocalDateTime getData() {
+		return data;
+	}
+	public String getDescricao() {
+		return descricao;
+	}
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	public Grupo getGrupo() {
+		return grupo;
+	}
+	public int getLotacaoMaxima() {
+		return lotacaoMaxima;
+	}
+	public String getObjetivo() {
+		return objetivo;
+	}
+	public BigDecimal getValor() {
+		return valor;
 	}
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;

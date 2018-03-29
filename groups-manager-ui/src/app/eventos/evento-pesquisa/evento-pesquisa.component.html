@@ -1,29 +1,61 @@
 <div class="container">
     <div class="ui-g">
 
-        <form autocomplete="off" (ngSubmit)="pesquisar()">
+        <div class="ui-g-12 ui-lg-5">
+            <form autocomplete="off" (ngSubmit)="pesquisar()">
 
-            <div class="ui-g-12">
-                <h1>Eventos</h1>
-            </div>
+                <div class="ui-g-12">
+                    <h1>Eventos</h1>
+                </div>
 
-            <div class="ui-g-12">
-                <p-calendar showTime="true" hourFormat="24" name="de" [(ngModel)]="eventoFiltro.de" #de="ngModel" placeholder="Data início do evento"></p-calendar>
-                <label>até</label>
-                <p-calendar showTime="true" hourFormat="24" name="ate" [(ngModel)]="eventoFiltro.ate" #de="ngModel" placeholder="Data fim do evento"></p-calendar>
-            </div>
+                <div class="ui-g-12" style="padding: 0;">
+                    <div class="ui-g ui-fluid">
+                        <div class="ui-g-12 ui-g-5">
+                            <p-calendar showTime="true" hourFormat="24" name="de" [(ngModel)]="eventoFiltro.de" #de="ngModel" placeholder="Data início do evento"></p-calendar>
+                        </div>
+                        <div class="ui-g-12 ui-g-1">
+                            <label>até</label>
+                        </div>
+                        <div class="ui-g-12 ui-g-5">
+                            <p-calendar showTime="true" hourFormat="24" name="ate" [(ngModel)]="eventoFiltro.ate" #de="ngModel" placeholder="Data fim do evento"></p-calendar>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="ui-g-12">
-                <button pButton type="submit" label="Pesquisar"></button>
-                <a pButton label="Novo" routerLink="/eventos/novo"></a>
-            </div>
+                <div class="ui-g-12">
+                    <button pButton type="submit" label="Pesquisar"></button>
+                    <a pButton label="Novo" routerLink="/eventos/novo"></a>
+                </div>
 
-        </form>
-    </div>
-
-    <div class="ui-g">
-        <p-panel header="Eventos">
-        </p-panel>
+            </form>
+        </div>
+        <div class="ui-g-12">
+            <p-carousel headerText="Cars" [value]="eventos">
+                <ng-template let-evento pTemplate="item">
+                    <div class="ui-grid ui-grid-responsive">
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-12">
+                                <img src="assets/images/icon-evento.png" width="60">
+                            </div>
+                        </div>
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-12">{{evento.descricao}}</div>
+                        </div>
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-12">{{evento.data | date:'HH:mm dd/MM/yyyy'}}</div>
+                        </div>
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-12">{{evento.grupo.nome}}</div>
+                        </div>
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-12">
+                                <button type="button" pButton icon="fa-search"></button>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </p-carousel>
+        </div>
     </div>
 
 </div>

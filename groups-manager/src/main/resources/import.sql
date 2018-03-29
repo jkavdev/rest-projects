@@ -43,3 +43,15 @@ INSERT INTO noticia(id, corpo, aberta_ao_publico, titulo, grupo_id) VALUES (17,'
 INSERT INTO noticia(id, corpo, aberta_ao_publico, titulo, grupo_id) VALUES (18,'<h3>Tudo funcionando de boas</h3><p>Derive inexpedient reason law virtues superiority victorious. Overcome pious horror suicide revaluation. Holiest ocean societydisgust passion value love. Faithful mountains morality hope disgust merciful moral will revaluation societyfearful love.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquamrepellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p><p>In et blandit turpis, ut congue nibh. Nam vitae tincidunt nunc, sed accumsan lacus. Sed efficitur malesuada augue ut varius.Pellentesque ultricies leo massa, eu posuere diam sodales quis.</p>',0,'Outra, véi esse negócio é bom mesmo',2);
 
 INSERT INTO topico_noticia VALUES (1,'ESPORTE'),(1,'CIENCIA_TECNOLOGIA'),(1,'MUNDO'),(2,'MUNDO'),(2,'NEGOCIOS'),(2,'CIENCIA_TECNOLOGIA'),(2,'ENTRETERIMENTO'),(2,'ESPORTE'),(2,'SAUDE'),(2,'OUTROS');
+
+INSERT INTO endereco VALUES (1,'Itapuã I','73.754-012','Local de festas perto centro','Planaltina','Quadra QR 12','DF','Brasília');
+INSERT INTO evento VALUES (2,'2018-03-16 01:13:29','Encontro Luz',120,'Deter maximo de conhecimento',564.56,1,2);
+INSERT INTO evento VALUES (3,'2018-03-16 01:13:29','Encontro Pego',120,'Deter maximo de conhecimento',564.56,1,2);
+INSERT INTO evento VALUES (4,'2018-03-16 01:13:29','Encontro Bom',120,'Deter maximo de conhecimento',564.56,1,2);
+INSERT INTO evento VALUES (5,'2018-03-16 01:13:29','Encontro Santo',120,'Deter maximo de conhecimento',564.56,1,2);
+INSERT INTO evento VALUES (6,'2018-03-16 01:13:29','Encontro Nego',120,'Deter maximo de conhecimento',564.56,1,2);
+INSERT INTO evento VALUES (7,'2018-03-16 01:13:29','Encontro Jesus',120,'Deter maximo de conhecimento',564.56,1,2);
+INSERT INTO evento VALUES (8,'2018-03-16 01:13:29','Encontro Maior',120,'Deter maximo de conhecimento',564.56,1,2);
+INSERT INTO evento VALUES (9,'2018-03-16 01:13:29','Encontro Centrado',120,'Deter maximo de conhecimento',564.56,1,2);
+INSERT INTO evento VALUES (10,'2018-03-16 01:13:29','Encontro Melo',120,'Deter maximo de conhecimento',564.56,1,2);
+INSERT INTO evento VALUES (11,'2018-03-16 01:13:29','Encontro Martugico',120,'Deter maximo de conhecimento',564.56,1,2);

@@ -1,6 +1,7 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import localePt from '@angular/common/locales/pt';
 
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ConfirmationService } from 'primeng/api';
@@ -16,6 +17,8 @@ import { TopicoService } from '../topicos/topico.service';
 import { NoticiaService } from '../noticias/noticia.service';
 import { EventoService } from '../eventos/evento.service';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada.component';
+
+registerLocaleData(localePt);
 
 @NgModule({
   imports: [

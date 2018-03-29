@@ -22,31 +22,17 @@ export class EventoService {
       'de': '',
       'ate': '',
     }
-    if (filtro.de && filtro.ate) {
-    params = {
-      'de': filtro.de.toISOString(),
-      'ate': filtro.ate.toISOString(),
+    if (filtro.de) {
+      params.de = filtro.de.toISOString()
     }
-  }
+    if (filtro.ate) {
+      params.ate = filtro.ate.toISOString()
+    }
 
-    // if (filtro.de) {
-    //   params.de = filtro.de
-    // }
-    // if (filtro.ate) {
-    //   params.ate = filtro.ate.toString()
-    // }
-
-    // console.log(filtro)
-    // console.log(filtro.ate)
-    // console.log(filtro.de)
-    // filtro.de = new Date();
-    // filtro.ate = new Date();
-
-console.log(params)
-
+    console.log(params)
     return this.http.get(`${this.eventosUrl}?pesquisa`, { search: params })
       .toPromise()
-      .then(resp => resp.json()); 
+      .then(resp => resp.json());
   }
 
 }

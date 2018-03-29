@@ -37,7 +37,6 @@ public class EventoController implements ServiceMap {
 	}
 	@GetMapping(params = "pesquisa")
 	private List<Evento> filtrar(EventoFilter filter) {
-		System.out.println(filter);
 		return eventoService.filtrar(filter);
 	}
 
