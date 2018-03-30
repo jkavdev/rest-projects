@@ -9,10 +9,10 @@
 
   <ul class="navbar-menu" [hidden]="!exibindoMenu">
     <li class="navbar-usuario">jkavdev</li>
-    <li class="navbar-menuitem" routerLinkActive="ativo"><a routerLink="/grupos">Grupos</a></li>
-    <li class="navbar-menuitem" routerLinkActive="ativo"><a routerLink="/integrantes">Integrantes</a></li>
-    <li class="navbar-menuitem" routerLinkActive="ativo"><a routerLink="/noticias">Noticias</a></li>
-    <li class="navbar-menuitem" routerLinkActive="ativo"><a routerLink="/eventos">Eventos</a></li>
+    <li class="navbar-menuitem" routerLinkActive="ativo"><a routerLink="/grupos" (click)="exibindoMenu = !exibindoMenu">Grupos</a></li>
+    <li class="navbar-menuitem" routerLinkActive="ativo"><a routerLink="/integrantes" (click)="exibindoMenu = !exibindoMenu">Integrantes</a></li>
+    <li class="navbar-menuitem" routerLinkActive="ativo"><a routerLink="/noticias" (click)="exibindoMenu = !exibindoMenu">Noticias</a></li>
+    <li class="navbar-menuitem" routerLinkActive="ativo"><a routerLink="/eventos" (click)="exibindoMenu = !exibindoMenu">Eventos</a></li>
   </ul>
 
 </nav>
