@@ -2,6 +2,8 @@ package br.com.jkavdev.groups.domain.grupo;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
@@ -40,7 +42,7 @@ public class Grupo {
 			name = "grupo_integrante", 
 			joinColumns = @JoinColumn(name = "grupo_id"), foreignKey = @ForeignKey(name = "fk_grupo_id"), 
 			inverseJoinColumns = @JoinColumn(name = "integrante_id"), inverseForeignKey = @ForeignKey(name = "fk_integrante_id"))
-	private Collection<Integrante> integrantes = Collections.emptySet();
+	private Collection<Integrante> integrantes = new HashSet<>();
 	
 	@OneToMany(mappedBy = "grupo")
 	private Collection<Evento> eventos = Collections.emptySet();
@@ -89,10 +91,15 @@ public class Grupo {
 		return objetivo;
 	}
 	public Collection<Integrante> getIntegrantes() {
-		return integrantes;
+		return Collections.unmodifiableCollection(integrantes);
 	}
 	public Collection<Noticia> getNoticias() {
 		return noticias;
+	}
+	
+	public void adicionar(Integrante integrante) {
+		Objects.requireNonNull(integrante);
+		integrantes.add(integrante);
 	}
 	
 	@Override

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -44,6 +45,11 @@ public class GrupoController implements ServiceMap {
 		Grupo grupoSalvo = grupoService.salvar(grupo);
 		publisher.publishEvent(new RecursoCriadoEvent(this, response, grupoSalvo.getId()));
 		return ResponseEntity.status(HttpStatus.CREATED).body(grupoSalvo);
+	}
+	@PutMapping("{idGrupo}/adicionarintegrante/{idIntegrante}")
+	@ResponseStatus(HttpStatus.OK)
+	public void adicionarIntegrante(@PathVariable Long idGrupo, @PathVariable Long idIntegrante) {
+		grupoService.adicionarIntegrante(idGrupo, idIntegrante);
 	}
 
 }

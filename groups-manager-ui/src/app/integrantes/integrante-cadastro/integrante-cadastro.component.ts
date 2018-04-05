@@ -28,8 +28,8 @@ export class IntegranteCadastroComponent implements OnInit {
 
   ngOnInit() {
     this.sexos = [];
-    this.sexos.push({ title: 'Masculino', value: 'MASCULINO', icon: 'fa fa-mars' });
-    this.sexos.push({ title: 'Feminino', value: 'FEMININO', icon: 'fa fa-venus' });
+    this.sexos.push({ title: 'Masculino', value: 'MASCULINO', icon: 'fa fa-mars', label: 'Masculino' });
+    this.sexos.push({ title: 'Feminino', value: 'FEMININO', icon: 'fa fa-venus', label: 'Feminino' });
   }
 
   salvar(form: FormControl) {

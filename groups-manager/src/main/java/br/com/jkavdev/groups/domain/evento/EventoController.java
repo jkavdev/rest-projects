@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.jkavdev.groups.event.RecursoCriadoEvent;
@@ -29,7 +28,6 @@ public class EventoController implements ServiceMap {
 	private ApplicationEventPublisher publisher;
 	
 	@PostMapping
-	@ResponseStatus(HttpStatus.CREATED)
 	public ResponseEntity<Evento> salvar(@Valid @RequestBody Evento evento, HttpServletResponse response) {
 		Evento eventoSalvo = eventoService.salvar(evento);
 		publisher.publishEvent(new RecursoCriadoEvent(this, response, eventoSalvo.getId()));
