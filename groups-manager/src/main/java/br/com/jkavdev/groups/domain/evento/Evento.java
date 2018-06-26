@@ -49,7 +49,7 @@ public class Evento {
 	
 	@NotNull
 	@ManyToOne
-	@JoinColumn(name = "grupo_id", foreignKey = @ForeignKey(name = "fk_grupo_id"))
+	@JoinColumn(name = "grupo_id", foreignKey = @ForeignKey(name = "fk_evento_grupo_id"))
 	private Grupo grupo;
 	
 	public Evento() {}

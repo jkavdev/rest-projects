@@ -26,18 +26,18 @@ import br.com.jkavdev.groups.domain.grupo.Grupo;
 
 @Entity
 public class Noticia {
-	
+
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@NotBlank
 	private String titulo;
-	
+
 	@NotNull
 	@ElementCollection
 	@JoinTable(
 			name = "topico_noticia",
-			joinColumns=@JoinColumn(name = "noticia_id"), foreignKey = @ForeignKey(name = "fk_noticia_id"))
+			joinColumns=@JoinColumn(name = "noticia_id"), foreignKey = @ForeignKey(name = "fk_topico_noticia_noticia_id"))
 	@Enumerated(EnumType.STRING)
 	@Column(name = "topico", nullable = false)
 	private Set<Topico> topicos = Collections.emptySet();
@@ -45,24 +45,24 @@ public class Noticia {
 	@NotBlank
 	@Column(columnDefinition = "text")
 	private String corpo;
-	
+
 	@NotNull
 	@ManyToOne
-	@JoinColumn(name = "grupo_id", foreignKey = @ForeignKey(name = "fk_grupo_id"))
+	@JoinColumn(name = "grupo_id", foreignKey = @ForeignKey(name = "fk_noticia_grupo_id"))
 	private Grupo grupo;
-	
+
 	@ElementCollection
 	@JoinTable(
 			name = "noticia_hits",
-			joinColumns=@JoinColumn(name = "noticia_id"), foreignKey = @ForeignKey(name = "fk_noticia_id"))
+			joinColumns=@JoinColumn(name = "noticia_id"), foreignKey = @ForeignKey(name = "fk_noticia_hits_noticia_id"))
 	@Column(name = "hit", nullable = false)
 	private List<Boolean> informacaoUtil = Collections.emptyList();
-	
+
 	@Column(name = "aberta_ao_publico")
 	private boolean publica;
-	
+
 	private String foto;
-	
+
 	public Noticia() {}
 
 	public Noticia(String titulo, Set<Topico> topicos, String corpo, Grupo grupo) {
@@ -71,7 +71,7 @@ public class Noticia {
 		this.corpo = corpo;
 		this.grupo = grupo;
 	}
-	
+
 	public static Noticia empty() {
 		Noticia empty = new Noticia();
 		empty.titulo = "";
@@ -79,7 +79,7 @@ public class Noticia {
 		empty.grupo = Grupo.empty();
 		return empty;
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -110,11 +110,11 @@ public class Noticia {
 	public void setPublica(boolean publica) {
 		this.publica = publica;
 	}
-	
+
 	public void adiciona(Boolean util) {
 		this.informacaoUtil.add(util);
 	}
-	
+
 	@Override
 	public String toString() {
 		return new ToStringCreator(this)
@@ -122,5 +122,5 @@ public class Noticia {
 				.append("titulo", titulo)
 				.append("grupo", grupo.getNome()).toString();
 	}
-	
+
 }

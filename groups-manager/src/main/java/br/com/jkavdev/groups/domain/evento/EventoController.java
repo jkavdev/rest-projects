@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
+import br.com.jkavdev.groups.domain.evento.dto.EventoDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.HttpStatus;
@@ -34,7 +35,7 @@ public class EventoController implements ServiceMap {
 		return ResponseEntity.status(HttpStatus.CREATED).body(eventoSalvo);
 	}
 	@GetMapping(params = "pesquisa")
-	private List<Evento> filtrar(EventoFilter filter) {
+	private List<EventoDTO> filtrar(EventoFilter filter) {
 		return eventoService.filtrar(filter);
 	}
 

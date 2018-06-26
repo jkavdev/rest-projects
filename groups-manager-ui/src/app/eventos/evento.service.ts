@@ -23,13 +23,12 @@ export class EventoService {
       'ate': '',
     }
     if (filtro.de) {
-      params.de = filtro.de.toISOString()
+      params.de = filtro.de.toLocaleString('pt-BR')
     }
     if (filtro.ate) {
-      params.ate = filtro.ate.toISOString()
+      params.ate = filtro.ate.toLocaleString('pt-BR')
     }
 
-    console.log(params)
     return this.http.get(`${this.eventosUrl}?pesquisa`, { search: params })
       .toPromise()
       .then(resp => resp.json());

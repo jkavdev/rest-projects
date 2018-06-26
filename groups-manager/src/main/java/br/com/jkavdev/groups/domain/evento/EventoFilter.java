@@ -7,10 +7,10 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 public class EventoFilter {
 
-	@DateTimeFormat(iso = ISO.DATE_TIME)
+	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm:ss")
 	private LocalDateTime de;
 
-	@DateTimeFormat(iso = ISO.DATE_TIME)
+	@DateTimeFormat(pattern = "dd/MM/yyyy HH:mm:ss")
 	private LocalDateTime ate;
 
 	public LocalDateTime getDe() {
