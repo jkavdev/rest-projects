@@ -33,7 +33,6 @@ export class EventoPesquisaComponent implements OnInit {
     this.eventoService.pesquisar(this.eventoFiltro)
       .then(eventos => {
         this.eventos = eventos;
-        console.log(eventos);
         this.toasty.success('Consulta realizada!')
       })
       .catch(erro => this.errorHandler.handle(erro));

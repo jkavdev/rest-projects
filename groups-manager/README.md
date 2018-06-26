@@ -6,6 +6,6 @@
 
 * Para rodar o projeto back, é necessário
 
-	mysql rodando na porta 3306
+	    mysql rodando na porta 3306
 
 

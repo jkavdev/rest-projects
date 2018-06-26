@@ -2,6 +2,7 @@ package br.com.jkavdev.groups.domain.evento;
 
 import java.util.List;
 
+import br.com.jkavdev.groups.domain.evento.dto.EventoDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,7 @@ public class EventoService {
 		return eventoRepository.save(evento);
 	}
 
-	public List<Evento> filtrar(EventoFilter filter) {
+	public List<EventoDTO> filtrar(EventoFilter filter) {
 		return eventoRepository.filtrar(filter);
 	}
 
