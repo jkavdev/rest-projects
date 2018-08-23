@@ -9,13 +9,13 @@
 	<packaging>jar</packaging>
 
 	<name>groups-manager</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Projeto de estudos dirigidos</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.0.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<version>2.0.4.RELEASE</version>
+		<relativePath />
 	</parent>
 
 	<properties>
