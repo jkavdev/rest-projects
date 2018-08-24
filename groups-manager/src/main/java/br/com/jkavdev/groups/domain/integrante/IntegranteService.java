@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
+import javax.validation.Valid;
+
 @Service
 public class IntegranteService {
 
@@ -28,7 +30,10 @@ public class IntegranteService {
 		return integrante.get();
 	}
 
-	public Integrante salvar(Integrante integrante) {
+	public Integrante salvar(@Valid Integrante integrante) {
+
+
+
 		return integranteRepository.save(integrante);
 	}
 

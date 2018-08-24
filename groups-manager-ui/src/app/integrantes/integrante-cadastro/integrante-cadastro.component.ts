@@ -6,7 +6,7 @@ import { SelectItem } from 'primeng/api';
 import { ToastyService } from 'ng2-toasty';
 
 import { IntegranteService } from '../integrante.service';
-import { Integrante } from '../../core/model';
+import {Grupo, Integrante} from '../../core/model';
 import { ErrorHandlerService } from '../../core/error-handler.service';
 
 @Component({
@@ -33,7 +33,14 @@ export class IntegranteCadastroComponent implements OnInit {
   }
 
   salvar(form: FormControl) {
-    console.log(this.integrante)
+    this.integranteService.salvar(this.integrante)
+      .then(() => {
+        this.toasty.success('Integrante adicionado!');
+
+        // form.reset();
+        // this.integrante = new Integrante();
+      })
+      .catch(erro => this.errorHandler.handle(erro));
   }
 
   validar(cpf: string) {

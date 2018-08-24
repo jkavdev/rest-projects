@@ -99,6 +99,25 @@ public class Integrante {
 	public Boolean getCadastroEfetivado() {
 		return cadastroEfetivado;
 	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public void setCelular(String celular) {
+		this.celular = celular;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public void setSexo(Sexo sexo) {
+		this.sexo = sexo;
+	}
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
 	
 	public void efetivarCadastro() {
 		this.cadastroEfetivado = Boolean.TRUE;

@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
-import { Http, URLSearchParams } from '@angular/http';
+import {Injectable} from '@angular/core';
+import {Http, URLSearchParams} from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
+import {Integrante} from "../core/model";
 
 export class IntegranteFiltro {
   nome: string;
@@ -44,4 +45,9 @@ export class IntegranteService {
       .then();
   }
 
+  salvar(integrante: Integrante): Promise<any> {
+    return this.http.post(`${this.integrantesUrl}`, integrante)
+      .toPromise()
+      .then(resp => resp.json());
+  }
 }
